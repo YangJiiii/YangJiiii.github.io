@@ -1,56 +1,43 @@
-<link rel="stylesheet" href="/style.css">
- <title>YangJiii</title>
- <link rel="icon" type="image/x-icon" href="https://yangjiiii.github.io/BlackList/sign.jpg">
-<!-- Optional - input form -->
-<!-- END OF MAIN SECTION FOR PLAY BUTTON -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>YangJiii Website</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/x-icon" href="https://yangjiiii.github.io/BlackList/sign.jpg">
 
-<!-- Optional -->
-<div class="info">
-	<div class="one">
-		<p>YangJiii</p>
-	</div>
-	<div class="button">
-		<p><a href="https://twitter.com/duongduong0908" target="_blank">Follow Me!</a></p>
-	</div>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<title>YangJiii Website</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+<div class="background">
+  <div class="title">Welcome to <div class="highlight">YangJiii 🍉</div>
+  </div>
+  <div style="height:20px"></div>
+  <div class="instructions">what's going on here... hmmm I don't know. look...</div>
+    <div style="height:10px"></div>
+	  <img src="https://yangjiiii.github.io/BlackList/sign.jpg" style="width:350px;height:350px;"/>
+  <div style="height:10px"></div>
+  <div class="step">Misaka Repo</div>
+  <div class="instructions">it is for MDC devices. you can copy the link below</div>
+  <div style="height:20px"></div>
+ <div class="instructions"><div class="highlight">https://raw.githubusercontent.com/YangJiiii/repomdc/main/Repo/repo.json</div></div>
+
+  <div style="height:20px"></div>
+  <div class="step">Application</div>
+  <div class="instructions">summarizing the apps that I've shared... hmmm but probably very few... haha</div>
+  <div style="height:20px"></div>
+  <div class="step">FiFa 16 Mod FiFa 23 ( IOS ) </div><p>
+  <a class="link" href="https://www.mediafire.com/file/yg41ohrdy5v4xwv/FiFa16+Mod+FiFa23+Share+YangJii.ipa/file">Download
+  </a>
+
+  <div style="height:70px"></div>
+  <div class="step">The End!</div>
 </div>
-
-<div class="info description">
-	<h3>About me!</h3>
-	<p>Nothing to recommend at all =)</p>
-</div>
-<div class="info description">
-	<h3>BlackList App</h3>
-	<p> <a href="itms-services://?action=download-manifest&url=https://yangjiiii.github.io/BlackList/app.plist" target="_blank" class="link">Download ( Cert TVMining 21/4 )</a></p>
-</div>
-<div class="info description">
-	<h3>Esign App</h3>
-	<p> <a href="itms-services://?action=download-manifest&url=https://yangjiiii.github.io/BlackList1/app.plist" target="_blank" class="link">Downloadd</a></p>
-</div>
-
-
-<script src="/script.js"></script>
-
-<?php
-$cookie = 'nei';
-$tid = 36288000;
-$file = "counter.dat";//file lưu lại số lầi truy cập
-if($cookie != "ja") {
-}
-else {
-if(file_exists($file)) {
-$fil = fopen($file, "r");
-$count = fread($fil, 8);
-fclose($fil);
-}
-else {
-$count=0;
-}
-$count++;
-$fil = fopen($file, "w");
-fwrite($fil, $count);
-fclose($fil);
-if($cookie == "ja") {
-setcookie("count","yes",time()+$tid);
-}
-}
-?>
+</a>
+<!-- partial -->
+  
+</body>
+</html>

@@ -1,155 +1,126 @@
-:root {
-	--brown: #24221b;
-	--cream: #e4dcc9;
+html,
+body,
+.background {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  background:#7289DA;
+  text-align:center
+}
+@font-face {
+  font-family: Whitney;
+  font-style: light;
+  font-weight: 300;
+  src: url(https://discordapp.com/assets/16801bfdf51ed88e69bc90626a3ea436.woff) format('woff')
 }
 
-body {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	margin: 1em;
-	align-items: center;
-	background-color: var(--cream);
-
-	/* optional */
-	gap: 1em;
-	font-family: "IBM Plex Mono";
-	font-size: 20px;
-	font-weight: bold;
-	letter-spacing: 2px;
-	user-select: none;
+@font-face {
+  font-family: Whitney;
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://discordapp.com/assets/d153359b5d87601d2b9c708b7ae2db02.woff) format('woff')
 }
 
-/* MAIN STYLES FOR PLAY BUTTON */
-#video-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 394px;
-	width: 700px;
-	border: 3px solid var(--brown);
-	border-radius: 5px;
-	position: relative;
-	cursor: none;
-	max-width: 100%;
+@font-face {
+  font-family: Whitney;
+  font-style: medium;
+  font-weight: 600;
+  src: url(https://discordapp.com/assets/a934ab008c7f6a2274ec441f6be0696a.woff) format('woff')
 }
 
-#play-button {
-	position: absolute;
-	border: 3px solid var(--brown);
-	border-radius: 100px;
-	width: 120px;
-	height: 120px;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	background-color: var(--cream);
-	opacity: 1;
-	cursor: none;
+@font-face {
+  font-family: Whitney;
+  font-style: semibold;
+  font-weight: 650;
+  src: url(https://discordapp.com/assets/877ef48bf9fcfee590f0ba64de101b59.woff) format('woff')
 }
 
-#video {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
+@font-face {
+  font-family: Whitney;
+  font-style: bold;
+  font-weight: 700;
+  src: url(https://discordapp.com/assets/2e004dd717cdc58b9ccb361d286ebbce.woff) format('woff')
 }
-
-.play-icon {
-	font-size: 20px;
-	color: var(--brown);
+.discordlogo{
+  background-image:url(https://discordapp.com/assets/192cb9459cbc0f9e73e2591b700f1857.svg);
+  width:250px;
+  height:65px;
+  background-size:100%;
+  display:inline-block;
+  background-repeat:no-repeat;
+  background-position:50%;
+  margin-left:-5px;
+  margin-bottom:-22px
 }
-
-/* END OF MAIN STYLES FOR PLAY BUTTON */
-
-/* Optional */
-
-a {
-	text-decoration: none;
-	color: inherit;
+.title{
+  font-smooth: auto;
+  padding-top:80px;
+  font-family: 'Whitney', sans-serif;
+  font-weight:700;
+  color:#fff;
+  font-size:40px
 }
-
-::placeholder {
-	color: var(--brown);
-	opacity: 30%;
+.background{
+  background-image:url(https://cdn.discordapp.com/attachments/185046628732895232/204497752091000832/bg3.svg);
+  background-size:50%;
 }
-
-::selection {
-	background-color: var(--brown);
-	color: var(--cream);
+.step{
+  font-smooth: auto;
+  font-family: 'Whitney', sans-serif;
+  font-weight:700;
+  color:#fff;
+  font-size:22px;
+  opacity:0.8
 }
-
-.info {
-	display: flex;
-	flex-direction: row;
-	gap: 1em;
-	width: 700px;
-	height: 50px;
-	max-width: 100%;
-}
-
-.button {
-	border: 3px solid var(--brown);
-	background-color: var(--brown);
-	color: var(--cream);
-	border-radius: 50px;
-	display: flex;
-	align-items: center;
-	width: 30%;
-	justify-content: center;
-
-	font-family: "IBM Plex Mono";
-	font-size: 20px;
-	font-weight: bold;
-	letter-spacing: 2px;
-	cursor: pointer;
-}
-
-.button:hover {
-	background-color: var(--cream);
-	color: var(--brown);
-}
-
-.button > p {
-	margin: 0;
-}
-
-.one {
-	width: 70%;
-	padding: 0 20px;
-	border: 3px solid var(--brown);
-	border-radius: 50px;
-	display: flex;
-	align-items: center;
-	background-color: var(--cream);
-
-	font-family: "IBM Plex Mono";
-	font-size: 20px;
-	font-weight: bold;
-	letter-spacing: 2px;
-}
-
-.description {
-	height: fit-content;
-	box-sizing: border-box;
-	padding: 20px 20px;
-	border: 3px solid var(--brown);
-	border-radius: 20px;
-	display: flex;
-	flex-direction: column;
-	background-color: var(--cream);
-	font-size: 16px;
-}
-
-.description > * {
-	margin: 0;
-}
-
 .link {
-	border-bottom: 2px solid var(--brown);
+  text-decoration:none;
+  color:#fff;
+  font-family: 'Whitney', sans-serif;
+  font-size:13px;
+  opacity:0.8;
+  margin-right:auto;
+  margin-left:auto;
+  padding:10px 20px;
+  border:2px solid #fff;
+  border-radius:100px;
 }
 
-.link:hover {
-	background-color: var(--brown);
-	color: var(--cream);
+.link:hover{
+  opacity:1;
+  }
+.instructions{
+  font-smooth: auto;
+  font-family: 'Whitney', sans-serif;
+  font-weight:650;
+  color:rgba(255,255,255,0.65);
+  font-size:16px;
+}
+.highlight{
+  background:rgba(255,255,255,0.1);
+  display:inline-block;
+  opacity:1;
+  border-radius:2px;
+  padding:0 5px;
+  color:#fff
+}
+.highlight:hover{
+  background:rgba(255,255,255,0.2);
+}
+.bottom-wrapper{
+  width:100%;
+  background:#2C2F33;
+  text-align:center;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+.wsite{
+  text-decoration:none;
+  color:#fff;
+  font-family: 'Whitney', sans-serif;
+  font-size:18px;
+  opacity:0.5;
+  transition:all 100ms ease
+}
+.bottom-wrapper:hover .wsite{
+  opacity:0.8
 }
