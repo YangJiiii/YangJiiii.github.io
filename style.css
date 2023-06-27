@@ -103,6 +103,17 @@ body,
   padding:0 5px;
   color:#fff
 }
+a{
+  background:rgba(255,255,255,0.1);
+  display:inline-block;
+  opacity:1;
+  border-radius:2px;
+  padding:0 5px;
+  color:#fff
+}
+a:hover{
+  background:rgba(255,255,255,0.2);
+}
 .highlight:hover{
   background:rgba(255,255,255,0.2);
 }
