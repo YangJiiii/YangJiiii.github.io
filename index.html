@@ -1,50 +1,323 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/imgs/inaya_pfp.gif">
-    
-    <!-- Title -->
-    <title>🌴 ・ YangJiii</title>
+    <meta charset="utf-8">
+    <title>ARM64e Repository</title>
+    <link rel="icon" href="https://arm64e.com/repo/CydiaIcon.png" class="next-head" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<style>
 
-    <!-- Css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+* {
+  font-family: 'Nunito', sans-serif;
+  color: white;
+}
 
-    <!-- Javascript -->
-    
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+body {
+  background-color: #292C30;
+}
 
-</head>
+a {
+  text-decoration: none;
+}
+
+/*Wrapper*/
+.wrapper {
+  position: absolute;
+  width: calc(100% - 10px);
+  text-align: center;
+  max-width: 850px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Columns */
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Responsive layout - Single Column on Mobile */
+@media screen and (max-width: 850px) {
+    .column {
+        width: 100%;
+    }
+    .wrapper {
+      top: 0;
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+}
+
+
+
+/*Subtitles above boxes*/
+.subtitle {
+  font-size: 20pt;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 0;
+}
+h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.bigbox {
+  background: #2F3439;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  border-radius: 25px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: calc(100% - 70px);
+  max-width: 350px;
+  line-height: 1.5;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.03);
+  border-width: 2px;
+}
+
+/* Button */
+.button {
+  background: linear-gradient(to right, #55B49D , #2B7DCA);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  border-radius: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color:white;
+  font-size: 14pt;
+  max-height: 50px;
+  line-height: 50px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+.button:hover {
+  filter: hue-rotate(90deg);
+  font-size: 16pt;
+}
+
+.twitter {
+  width: 70px;
+  margin-right: 20px;
+}
+
+.packageicon {
+  width: 37px;
+  height: 37px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+.packageBox:hover .packageicon {
+  width: 57px;
+  height: 57px;
+}
+
+.packageIconHolder {
+  width: 37px;
+  height: 37px;
+  padding: 10px;
+  border-radius: 15px;
+  left: 16px;
+  top: 14px;
+  z-index: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  position: absolute;
+}
+.packageBox:hover .packageIconHolder {
+  padding: 55px;
+  left: -35px;
+  top: -41px;
+  width: 500px;
+  height: 300px;
+}
+
+.packageContentHolder {
+  position: absolute;
+  left: 110px;
+  top: 16px;
+  max-width: 290px;
+  overflow: hidden;
+  max-height: 80px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+.packageBox:hover .packageContentHolder {
+  top: 15px;
+}
+
+.packageTitle {
+  font-weight: bold;
+  font-size: 14pt;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+.packageBox:hover .packageTitle {
+  font-size: 16pt;
+}
+
+.packageDescription, .packageGreyDescription {
+  font-weight: normal;
+  font-size: 12.5pt;
+}
+.packageGreyDescription {
+  color: rgba(255,255,255,.6)
+}
+
+.packageBox {
+  background: #2F3439;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  color: white;
+  border-radius: 25px;
+  padding: 15px;
+  line-height: 1.5;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.03);
+  border-width: 2px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  min-height: 55px;
+  max-height: 55px;
+  width: calc(100% - 60px);
+  max-width: 350px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+
+p {
+  font-size: 12.5pt;
+}
+
+</style>
+
 <body>
 
-    <header>
-        <nav>
-            <div class="header_links">
-                <ul class="navbar-nav ml-auto py-4 py-md-0">
-                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="#">123</a>
-								</li>
-                    <!-- <li class="nav_link"><a href="#">Shop</a></li> -->
-                    <!-- <li class="nav_link"><a href="#">Repos</a></li> -->
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <div class="wrapper">
 
-    <section class="main">
-        <img src="https://i.pinimg.com/originals/65/71/bd/6571bda97a4d6ef6570b0d4c91d1fea3.gif" alt="" srcset="">
-        <span>YangJiiii</span>
-        <p>100 years old</p>
-        <ul>
-            <li><a target="_blank" href="https://twitter.com/duongduong0908"><i class="fab fa-twitter-square"></i></a></li>
-            <li><a target="_blank" href="https://github.com/YangJiiii"><i class="fab fa-github"></i></a></li>
-        </ul>
-    </section>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="assets/js/script.js"></script>
+    <div class="column">
+      <div class="subtitle">Add ARM64e repo to package manager </div>
+
+         <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://arm64e.com/repo/">
+          <div class="packageBox">
+            <div class="packageIconHolder" style="background: linear-gradient(to right, #d7613d 0%, #2cd3c7 100%)">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png" class="packageicon";>
+              
+            </div>
+            <div class="packageContentHolder">
+              <span class="packageTitle">Add to Cydia</span>
+              <br><span class="packageDescription"> متجر السيديا</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="sileo://source/https://arm64e.com/repo/">
+          <div class="packageBox">
+            <div class="packageIconHolder" style="background: linear-gradient(to right, #09abaf , #2cd3c7)">
+              <img src="https://sileotweak.github.io/depiction/sileo.png" class="packageicon";>
+            </div>
+            <div class="packageContentHolder">
+              <span class="packageTitle">Add to Sileo</span>
+              <br><span class="packageDescription"> متجر سيلو</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="zbra://sources/add/https://arm64e.com/repo/">
+          <div class="packageBox">
+            <div class="packageIconHolder" style="background: linear-gradient(to right, #ffffff , #ececec)">
+              <img src="https://sileotweak.github.io/depiction/zebra.png" class="packageicon";>
+            </div>
+            <div class="packageContentHolder">
+              <span class="packageTitle">Add to Zebra</span>
+              <br><span class="packageDescription"> متجر زيبرا</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://arm64e.com/repo/rootless">
+          <div class="packageBox">
+            <div class="packageIconHolder" style="background: linear-gradient(to right, #ffffff , #ececec)">
+              <img src="https://arm64e.com/repo/rootless.png" class="packageicon";>
+            </div>
+            <div class="packageContentHolder">
+              <span class="packageTitle">Add to Rootless</span>
+              <br><span class="packageDescription"> مستخدمين الروت ليس اضغط هنا  </span>
+            </div>
+          </div>
+        </a>
+        
+        <div class="subtitle"> لمراسلتي على تويتـر</div>
+
+        <a href="https://twitter.com/DNS_Sys">
+          <div class="packageBox">
+            <div class="packageIconHolder" style="background: linear-gradient(to right, #55ACEF , #0A76E7)">
+              <img src="https://sileotweak.github.io/depiction/twitter.png" class="packageicon";>
+            </div>
+            <div class="packageContentHolder">
+              <span class="packageTitle">Twitter</span>
+              <br><span class="packageDescription">Sniper</span>
+            
+            </div>
+          </div>
+        </a>
+    </div>
 </body>
-</html>
+<script>
+  document.getElementById("location").innerText = window.location.href
+  if (window.location.pathname == "../theme-guide.html") {
+    window.location.href = "https://sileotweak.github.io/theme-guide/"
+  }
+  if (window.location.pathname == "../theme-guide/home.html") {
+    window.location.href = "https://sileotweak.github.io/theme-guide/"
+  }
+  if (window.location.pathname == "../shortcuts.html") {
+    window.location.href = "https://sileotweak.github.io/shortcuts/"
+  }
+  if (window.location.pathname == "../stock-identifiers.html") {
+    window.location.href = "https://sileotweak.github.io/stock-identifiers/"
+  }
+  if (window.location.pathname == "../package/Bleed/index.html") {
+    window.location.href = "https://repo.packix.com/package/com.pinpal.bleed/"
+  }
+</script>
