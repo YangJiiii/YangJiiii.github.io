@@ -1,0 +1,875 @@
+{
+    "RepositoryName": "YangJiii 🍉 3.0 Repo's",
+    "RepositoryDescription": "YangJiii 🍉 Repo's For You",
+    "RepositoryAuthor": "YangJiii 🍉",
+    "RepositoryIcon": "https://yangjiii.tech/file/Images/RepoImages/logoyangjiiinoel.png",
+    "RepositoryWebsite": "https://github.com/YangJiiii/repomdc/",
+	"Default":{
+        "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+        "ViewCount": true
+    },
+	"RepositoryAccent": "#f9b72d",
+	 "featured": [
+    {
+      "name": "Font Apple Symbols",
+      "bundleid": "com.yangjiii.applesymbols1.0",
+      "banner":"https://raw.githubusercontent.com/YangJiiii/YangJiiii.github.io/main/file/Repo/Banner/apple.png",
+      "showname": false
+    },
+    {
+      "name": "Plampy UI",
+      "bundleid": "com.yangjiii.plampyuicc",
+      "banner":"https://raw.githubusercontent.com/YangJiiii/YangJiiii.github.io/main/file/Repo/Banner/plampyui.png",
+      "showname": false
+    },
+    {
+      "name": "Hide Manager",
+      "bundleid": "com.yangjiii.hidemanager",
+      "banner":"https://raw.githubusercontent.com/YangJiiii/YangJiiii.github.io/main/file/Repo/Banner/hidemanager.png",
+      "showname": false
+    }
+	],
+    "RepositoryContents": [
+        {
+            "Name": "Font Apple Symbols",
+            "Description": "Fonts Apple Symbols. change character support MDC devices",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Other",
+            "Caption": "Fonts Apple Symbols. change character support MDC devices",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/symbols.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.applesymbols1.0.misaka",
+                  "Description": "Fonts Apple Symbols. change character support MDC . devices"
+              }
+            ],
+            "PackageID": "com.yangjiii.applesymbols1.0"
+        },
+		{
+            "Name": "Trakya Rounded 85% Font",
+            "Description": "System Font",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    },
+					{
+                        "Label": "Alexman",
+                        "Link": "https://twitter.com/Alexman1979"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Other",
+            "Caption": "Trakya Rounded 85% - 15% Bold\nFont made by @Alexman1979 and remade by YangJiii",
+			"MinIOSVersion": "16.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/TrakyaRounded85.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.TrakyaRounded85.misaka",
+                  "Description": "System Font"
+              }
+            ],
+            "PackageID": "com.yangjiii.TrakyaRounded85"
+        },
+        {
+            "Name": "LS UI YangJiii",
+            "Description": "Change camera and flash icon",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Lock Screen",
+            "Caption": "Change camera and flash icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/lsuiyangjiii1.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.yangjiuils.misaka",
+                  "Description": "Change camera and flash icon"
+              }
+            ],
+            "PackageID": "com.yangjiii.yangjiuils"
+        },
+		        {
+            "Name": "Font Clock Group 1 ( IOS16 )",
+            "Description": "Change clock font on ios 16",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Clock",
+            "Caption": "Change clock font on ios 16",
+		"MinIOSVersion": "16.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/fontclockgroup1.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.lsclockios16.1.0.misaka",
+                  "Description": "Change clock font on ios 16"
+              }
+            ],
+            "PackageID": "com.yangjiii.lsclockios16.1.0"
+        },
+		{
+            "Name": "Radar",
+            "Description": "Show internal on settings",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "Show internal on settings",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.1.2",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/radar.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.radar.misaka",
+                  "Description": "Show internal on settings"
+              }
+            ],
+            "PackageID": "com.yangjiii.radar"
+        },
+		{
+            "Name": "Usagi Passcode",
+            "Description": "Change your passcode",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://i.pinimg.com/originals/5a/b0/67/5ab06768b12e2a87a6264bd385ed5dd3.gif",
+            "Category": "Passcode",
+            "Caption": "Change your passcode",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://cdn.discordapp.com/attachments/1076484358774472777/1076484359676243968/IMG_0808.png"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.usagipasscode.misaka",
+                  "Description": "Change your passcode"
+              }
+            ],
+            "PackageID": "com.yangjiii.usagipasscode"
+        },
+		{
+            "Name": "LS UI NaYan",
+            "Description": "Change camera and flash icon",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Lock Screen",
+            "Caption": "Change camera and flash icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/lsuinayan.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.nayanlsui.misaka",
+                  "Description": "Change camera and flash icon"
+              }
+            ],
+            "PackageID": "com.yangjiii.nayanlsui"
+        },
+		{
+            "Name": "Wifi List",
+            "Description": "Show the password wifi was connect",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "Instructions\n-after downloading the tweak. turn it on and reboot (no respring )\n - after reboot. Go back to the misaka app. re-enable the tweak again. going to wifi settings should show \n - then you can apply other tweaks and respring normally \n (haven't tested on cert, works fine on trollstore, altstore, sidestore )",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "15.7.1",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/wifilist2.jpg","https://yangjiii.tech/file/Images/RepoImages/wifilist1.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.wifilist.misaka",
+                  "Description": "Show the password wifi was connect"
+              }
+            ],
+            "PackageID": "com.yangjiii.wifilist"
+        },
+		{
+            "Name": "LS UI SamSungOld",
+            "Description": "Change camera and flash icon",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Lock Screen",
+            "Caption": "Change camera and flash icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/samsungoldlsui.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.samsungoldlsui.misaka",
+                  "Description": "Change camera and flash icon"
+              }
+            ],
+            "PackageID": "com.yangjiii.samsungoldlsui"
+        },
+		{
+            "Name": "Font Corporative Sans Alt 85%",
+            "Description": "Change your system font",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Font",
+            "Caption": "Corporative Sans Alt by @Alexman1979",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/corporativefont.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.fontcorporative.misaka",
+                  "Description": "Change your system font"
+              }
+            ],
+            "PackageID": "com.yangjiii.fontcorporative"
+        },
+		{
+            "Name": "Plampy UI",
+            "Description": "Change control center icon",
+            "Author": {
+                "Label": "YangJiii - しまりん - htrowii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    },
+					{
+                        "Label": "しまりん",
+                        "Link": "https://twitter.com/straight_tamago"
+                    },
+					{
+                        "Label": "htrowii",
+                        "Link": "https://twitter.com/htrowii"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Control Center",
+            "Caption": "Change control center icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/plampyui3.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuicc.misaka",
+                  "Description": "Change camera and flash icon"
+              },
+			   {
+                  "Version": "1.1",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv1.1.misaka",
+                  "Description": "white background fix"
+              },
+			  {
+                  "Version": "1.2",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv1.2.misaka",
+                  "Description": "- reduce icon size\n- change mobile data and wifi icons\n- fix wifi icon getting bigger when holding on wifi icon"
+              },
+			  			  {
+                  "Version": "1.3",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv1.3.misaka",
+                  "Description": "restore mobile data icon to satellite \n- update add wifi icon in hold wifi button"
+              },
+			  			  {
+                  "Version": "1.4",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv1.4.misaka",
+                  "Description": "Fix bug"
+              },
+			  	{
+                  "Version": "1.5",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv1.5.misaka",
+                  "Description": "new icon update \n rotation lock\n sound on - off \n flashlight \n calculator \n camera \n alarm \n QRcode \n wallet \n light dark \n screen recording"
+              },
+			  	{
+                  "Version": "1.6",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv1.6.misaka",
+                  "Description": "updated low power mode icon"
+              },
+			  {
+                  "Version": "2.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv2.0.misaka",
+                  "Description": "new version. new icon update"
+              },
+			  {
+                  "Version": "2.1",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv2.1.misaka",
+                  "Description": "add effects. change a few pictures"
+              },
+			  {
+                  "Version": "2.2",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv2.2.misaka",
+                  "Description": "- resize flashlight icon \n- change sound icon"
+              },
+			  {
+                  "Version": "2.3",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv2.3.misaka",
+                  "Description": "- change mute icon \n- add icon shazam"
+              },
+			  {
+                  "Version": "2.5",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv2.5.misaka",
+                  "Description": "- Update more icons"
+              },
+              {
+                  "Version": "Final",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccfinal.misaka",
+                  "Description": "Final Plampy UI"
+              },
+              {
+                  "Version": "Hot Fix",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccfinalfix.misaka",
+                  "Description": "Hot Fix"
+              },
+              {
+                  "Version": "Fix",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccfinal2.misaka",
+                  "Description": "Fix Shazam icon KFD"
+              },
+			  {
+                  "Version": "2.6",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampyuiccv2.6.misaka",
+                  "Description": "- Update icon battery and icon listen"
+              }
+            ],
+            "PackageID": "com.yangjiii.plampyuicc"
+        },
+		{
+            "Name": "LS UI Plampy",
+            "Description": "Change camera and flash icon",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Lock Screen",
+            "Caption": "Change camera and flash icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/plampyoff.jpg","https://yangjiii.tech/file/Images/RepoImages/plampyon.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampylsui.misaka",
+                  "Description": "Change camera and flash icon"
+              }
+            ],
+            "PackageID": "com.yangjiii.plampylsui"
+        },
+		{
+            "Name": "Text Search",
+            "Description": "edit the word Search",
+            "Author": {
+                "Label": "YangJiii,tdquang",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    },
+					{
+                        "Label": "tdquang",
+                        "Link": "https://twitter.com/tdquangg"
+                    }
+                ]
+            },
+           "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "edit the word Search",
+			"MinIOSVersion": "16.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/spotlight.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.textsearch.misaka",
+                  "Description": "edit the word Search"
+              },
+			  {
+                  "Version": "1.1",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.textsearch1.0.misaka",
+                  "Description": "Fix Bug"
+              }
+            ],
+            "PackageID": "com.yangjiii.textsearch"
+        },
+		{
+            "Name": "LS UI Plampy 2.0",
+            "Description": "Change camera and flash icon",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Lock Screen",
+            "Caption": "Change camera and flash icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/plampyoff1.jpg","https://yangjiii.tech/file/Images/RepoImages/plampyon1.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampylsui2.0.misaka",
+                  "Description": "Change camera and flash icon"
+              }
+            ],
+            "PackageID": "com.yangjiii.plampylsui2.0"
+        },
+		{
+            "Name": "Plampy Settings",
+            "Description": "change settings icon",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "change settings icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/plampysettings.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampysettings.misaka",
+                  "Description": "- Wallet icon, FaceID will default \n- On IOS 15. VPN icon shows well. IOS16 default display"
+              }
+            ],
+            "PackageID": "com.yangjiii.plampysettings",
+			"VarLess": true
+        },
+		{
+            "Name": "Plampy Settings V2",
+            "Description": "change settings icon",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "change settings icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://pbs.twimg.com/media/F_Tz2jga0AACbfn?format=jpg&name=large"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.plampysettings3.0.misaka",
+                  "Description": "- Wallet icon, FaceID will default \n- On IOS 15. VPN icon shows well. IOS16 default display"
+              }
+            ],
+            "PackageID": "com.yangjiii.plampysettings2.0",
+			"VarLess": true
+        },
+		{
+            "Name": "Lock HandSomeDog",
+            "Description": "Change the Faceid icon",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Lock Screen",
+            "Caption": "Change the Faceid icon\n Source: China",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/handsomedog.gif"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.handsomedoglock.misaka",
+                  "Description": "Change the Faceid icon"
+              }
+            ],
+            "PackageID": "com.yangjiii.handsomedoglock"
+        },
+        {
+            "Name": "Fast ToolBox",
+            "Description": "ToolBox",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "After activation. Access ( Settings - General Settings )",
+            "MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/toolbox1.jpg"
+            ],
+            "Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.fasttoolbox.misaka",
+                  "Description": "ToolBox"
+              },
+			  {
+                  "Version": "2.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.fasttoolbox2.0.misaka",
+                  "Description": "ToolBox"
+              }
+            ],
+            "PackageID": "com.yangjiii.fasttoolbox"
+        },
+		{
+            "Name": "Sizei",
+            "Description": "Open Dynamic Island",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "Open Dynamic Island",
+			"MinIOSVersion": "16.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/dynamicview.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0b1",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.dynamicisland1b1.misaka",
+                  "Description": "Open Dynamic Island"
+              }
+            ],
+            "PackageID": "com.yangjiii.dynamicisland"
+        },
+		{
+            "Name": "HideManager",
+            "Description": "Useful hidden tools",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "Hide Dock \nHide Blur Folder\nHide Old Notification\nHide Camera Sound\nHide Faceid\nRemove Hidden iCloud\n.....",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/hidemanagerdemo1.jpg","https://yangjiii.tech/file/Images/RepoImages/hidemanagerdemo2.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.hidemanager1.0.misaka",
+                  "Description": "Useful hidden tools"
+              }
+            ],
+            "PackageID": "com.yangjiii.hidemanager"
+        },
+		{
+            "Name": "kindaStock",
+            "Description": "A theme for iOS. Clean, familiar, yet new.",
+            "Author": {
+                "Label": "YangJiii",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Themes",
+            "Caption": "IOS15 will automatically apply Badge\nkindaStock improves on the stock iOS icons while staying true to the original. Every icon is carefully crafted with love and attention to detail to give your device a fresh new look while keeping that premium Apple feeling.\nkindaStock comes with over 200 themed icons, with 50 alternative icons including soft versions.\nAll credit to original creator who does not want to be mentioned. Thank you for the beautiful work.",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.1.2",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/kindastock.jpg"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.kindaStock.misaka",
+                  "Description": "A theme for iOS. Clean, familiar, yet new."
+              }
+            ],
+            "PackageID": "com.yangjiii.kindaStock"
+        },
+		{
+            "Name": "Lịch Vạn Niên",
+            "Description": "Hiển thị lịch Dương - Âm trên thanh trạng thái",
+            "Author": {
+                "Label": "YangJiii - Robin",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    },
+					{
+                        "Label": "Robin",
+                        "Link": "https://twitter.com/roeegh"
+                    }
+                ]
+            },
+           "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "Hiển thị lịch Dương - Âm trên thanh trạng thái",
+			"MinIOSVersion": "15.0",
+            "Screenshot": [
+                "https://pbs.twimg.com/media/F-efgJLakAACNZN?format=jpg&name=medium"
+            ],
+			"compatibleExploit": ["MDC", "KFD", "No Exploit","TrollStore"],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.lichvannien.misaka",
+                  "Description": "Hiển thị lịch Dương - Âm trên thanh trạng thái"
+              }
+            ],
+            "PackageID": "com.yangjiii.lichvannien"
+        },
+				{
+            "Name": "Real Weather",
+            "Description": "Weather on status bar",
+            "Author": {
+                "Label": "YangJiii - Robin",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    },
+					{
+                        "Label": "Robin",
+                        "Link": "https://twitter.com/roeegh"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Settings",
+            "Caption": "Weather on status bar",
+			"MinIOSVersion": "15.0",
+            "Screenshot": [
+                "https://yangjiii.tech/file/Images/RepoImages/realweatherdemo.png"
+            ],
+			"compatibleExploit": ["MDC", "KFD" ,"TrollStore","No Exploit"],
+			"Releases": [
+              {
+                  "Version": "Beta",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.realweather.misaka",
+                  "Description": "Beta"
+              }
+            ],
+            "PackageID": "com.yangjiii.realweather"
+        },
+		{
+            "Name": "MiuMin UI",
+            "Description": "Change control center icon",
+            "Author": {
+                "Label": "YangJiii - Phuc Do ✨ - boboi boy",
+                "Links": [
+                    {
+                        "Label": "YangJiii",
+                        "Link": "https://twitter.com/duongduong0908"
+                    },
+					{
+                        "Label": "Phuc Do ✨",
+                        "Link": "https://twitter.com/dobabaophuc"
+                    },
+					{
+                        "Label": "boboi boy",
+                        "Link": "https://twitter.com/andrea_yf24"
+                    }
+                ]
+            },
+            "Icon": "https://yangjiii.tech/file/Images/RepoImages/icon1.png",
+            "HeaderImage": "https://yangjiii.tech/file/Images/RepoImages/banner1.gif",
+            "Category": "Control Center",
+            "Caption": "Change control center icon",
+			"MinIOSVersion": "15.0",
+            "MaxIOSVersion": "16.8",
+            "Screenshot": [
+                "https://pbs.twimg.com/media/GBzeSv0aIAAOC--?format=jpg&name=large"
+            ],
+			"Releases": [
+              {
+                  "Version": "1.0",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.miumincc.misaka",
+                  "Description": "Change camera and flash icon"
+              }
+            ],
+            "PackageID": "com.yangjiii.miumincc"
+        }
+		
+		
+    ]
+}
