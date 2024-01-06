@@ -1,0 +1,416 @@
+{
+    "name": "YangJiii \ud83c\udf49 3.0 Repo's",
+    "description": "YangJiii \ud83c\udf49 Repo's For You",
+    "icon": "../Images/RepoImages/logoyangjiiinoel.png",
+    "accent": "#f9b72d",
+    "featured": [
+        {
+            "name": "Font Apple Symbols",
+            "bundleid": "com.yangjiii.applesymbols1.0",
+            "banner": "file/Repo/Banner/apple.png",
+            "showname": false
+        },
+        {
+            "name": "Plampy UI",
+            "bundleid": "com.yangjiii.plampyuicc",
+            "banner": "file/Repo/Banner/plampyui.png",
+            "showname": false
+        },
+        {
+            "name": "Hide Manager",
+            "bundleid": "com.yangjiii.hidemanager",
+            "banner": "file/Repo/Banner/hidemanager.png",
+            "showname": false
+        }
+    ],
+    "packages": [
+        {
+            "name": "Font Apple Symbols",
+            "bundleid": "com.yangjiii.applesymbols1.0",
+            "author": "YangJiii",
+            "description": "Fonts Apple Symbols. change character support MDC devices",
+            "version": "1.0",
+            "long_description": "Fonts Apple Symbols. change character support MDC devices",
+            "category": "Other",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.applesymbols1.0.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/symbols.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Trakya Rounded 85% Font",
+            "bundleid": "com.yangjiii.TrakyaRounded85",
+            "author": "YangJiii",
+            "description": "System Font",
+            "version": "1.0",
+            "long_description": "Trakya Rounded 85% - 15% Bold\nFont made by @Alexman1979 and remade by YangJiii",
+            "category": "Other",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.TrakyaRounded85.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/TrakyaRounded85.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "LS UI YangJiii",
+            "bundleid": "com.yangjiii.yangjiuils",
+            "author": "YangJiii",
+            "description": "Change camera and flash icon",
+            "version": "1.0",
+            "long_description": "Change camera and flash icon",
+            "category": "Lock Screen",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.yangjiuils.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/lsuiyangjiii1.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Font Clock Group 1 ( IOS16 )",
+            "bundleid": "com.yangjiii.lsclockios16.1.0",
+            "author": "YangJiii",
+            "description": "Change clock font on ios 16",
+            "version": "1.0",
+            "long_description": "Change clock font on ios 16",
+            "category": "Clock",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.lsclockios16.1.0.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/fontclockgroup1.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Radar",
+            "bundleid": "com.yangjiii.radar",
+            "author": "YangJiii",
+            "description": "Show internal on settings",
+            "version": "1.0",
+            "long_description": "Show internal on settings",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.radar.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/radar.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Usagi Passcode",
+            "bundleid": "com.yangjiii.usagipasscode",
+            "author": "YangJiii",
+            "description": "Change your passcode",
+            "version": "1.0",
+            "long_description": "Change your passcode",
+            "category": "Passcode",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.usagipasscode.purekfd",
+            "screenshots": [
+                "https://cdn.discordapp.com/attachments/1076484358774472777/1076484359676243968/IMG_0808.png"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "LS UI NaYan",
+            "bundleid": "com.yangjiii.nayanlsui",
+            "author": "YangJiii",
+            "description": "Change camera and flash icon",
+            "version": "1.0",
+            "long_description": "Change camera and flash icon",
+            "category": "Lock Screen",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.nayanlsui.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/lsuinayan.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Wifi List",
+            "bundleid": "com.yangjiii.wifilist",
+            "author": "YangJiii",
+            "description": "Show the password wifi was connect",
+            "version": "1.0",
+            "long_description": "Instructions\n-after downloading the tweak. turn it on and reboot (no respring )\n - after reboot. Go back to the purekfd app. re-enable the tweak again. going to wifi settings should show \n - then you can apply other tweaks and respring normally \n (haven't tested on cert, works fine on trollstore, altstore, sidestore )",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.wifilist.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/wifilist2.jpg",
+                "../Images/RepoImages/wifilist1.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "LS UI SamSungOld",
+            "bundleid": "com.yangjiii.samsungoldlsui",
+            "author": "YangJiii",
+            "description": "Change camera and flash icon",
+            "version": "1.0",
+            "long_description": "Change camera and flash icon",
+            "category": "Lock Screen",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.samsungoldlsui.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/samsungoldlsui.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Font Corporative Sans Alt 85%",
+            "bundleid": "com.yangjiii.fontcorporative",
+            "author": "YangJiii",
+            "description": "Change your system font",
+            "version": "1.0",
+            "long_description": "Corporative Sans Alt by @Alexman1979",
+            "category": "Font",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.fontcorporative.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/corporativefont.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Plampy UI",
+            "bundleid": "com.yangjiii.plampyuicc",
+            "author": "YangJiii - \u3057\u307e\u308a\u3093 - htrowii",
+            "description": "Change control center icon",
+            "version": "2.6",
+            "long_description": "Change control center icon",
+            "category": "Control Center",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.plampyuicc.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/plampyui3.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "LS UI Plampy",
+            "bundleid": "com.yangjiii.plampylsui",
+            "author": "YangJiii",
+            "description": "Change camera and flash icon",
+            "version": "1.0",
+            "long_description": "Change camera and flash icon",
+            "category": "Lock Screen",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.plampylsui.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/plampyoff.jpg",
+                "../Images/RepoImages/plampyon.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Text Search",
+            "bundleid": "com.yangjiii.textsearch",
+            "author": "YangJiii,tdquang",
+            "description": "edit the word Search",
+            "version": "1.1",
+            "long_description": "edit the word Search",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.textsearch.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/spotlight.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "LS UI Plampy 2.0",
+            "bundleid": "com.yangjiii.plampylsui2.0",
+            "author": "YangJiii",
+            "description": "Change camera and flash icon",
+            "version": "1.0",
+            "long_description": "Change camera and flash icon",
+            "category": "Lock Screen",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.plampylsui2.0.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/plampyoff1.jpg",
+                "../Images/RepoImages/plampyon1.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Plampy Settings",
+            "bundleid": "com.yangjiii.plampysettings",
+            "author": "YangJiii",
+            "description": "change settings icon",
+            "version": "1.0",
+            "long_description": "change settings icon",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.plampysettings.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/plampysettings.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Plampy Settings V2",
+            "bundleid": "com.yangjiii.plampysettings2.0",
+            "author": "YangJiii",
+            "description": "change settings icon",
+            "version": "1.0",
+            "long_description": "change settings icon",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.plampysettings2.0.purekfd",
+            "screenshots": [
+                "https://pbs.twimg.com/media/F_Tz2jga0AACbfn?format=jpg&name=large"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Lock HandSomeDog",
+            "bundleid": "com.yangjiii.handsomedoglock",
+            "author": "YangJiii",
+            "description": "Change the Faceid icon",
+            "version": "1.0",
+            "long_description": "Change the Faceid icon\n Source: China",
+            "category": "Lock Screen",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.handsomedoglock.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/handsomedog.gif"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Fast ToolBox",
+            "bundleid": "com.yangjiii.fasttoolbox",
+            "author": "YangJiii",
+            "description": "ToolBox",
+            "version": "2.0",
+            "long_description": "After activation. Access ( Settings - General Settings )",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.fasttoolbox.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/toolbox1.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Sizei",
+            "bundleid": "com.yangjiii.dynamicisland",
+            "author": "YangJiii",
+            "description": "Open Dynamic Island",
+            "version": "1.0b1",
+            "long_description": "Open Dynamic Island",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.dynamicisland.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/dynamicview.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "HideManager",
+            "bundleid": "com.yangjiii.hidemanager",
+            "author": "YangJiii",
+            "description": "Useful hidden tools",
+            "version": "1.0",
+            "long_description": "Hide Dock \nHide Blur Folder\nHide Old Notification\nHide Camera Sound\nHide Faceid\nRemove Hidden iCloud\n.....",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.hidemanager.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/hidemanagerdemo1.jpg",
+                "../Images/RepoImages/hidemanagerdemo2.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "kindaStock",
+            "bundleid": "com.yangjiii.kindaStock",
+            "author": "YangJiii",
+            "description": "A theme for iOS. Clean, familiar, yet new.",
+            "version": "1.0",
+            "long_description": "IOS15 will automatically apply Badge\nkindaStock improves on the stock iOS icons while staying true to the original. Every icon is carefully crafted with love and attention to detail to give your device a fresh new look while keeping that premium Apple feeling.\nkindaStock comes with over 200 themed icons, with 50 alternative icons including soft versions.\nAll credit to original creator who does not want to be mentioned. Thank you for the beautiful work.",
+            "category": "Themes",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.kindaStock.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/kindastock.jpg"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "L\u1ecbch V\u1ea1n Ni\u00ean",
+            "bundleid": "com.yangjiii.lichvannien",
+            "author": "YangJiii - Robin",
+            "description": "Hi\u1ec3n th\u1ecb l\u1ecbch D\u01b0\u01a1ng - \u00c2m tr\u00ean thanh tr\u1ea1ng th\u00e1i",
+            "version": "1.0",
+            "long_description": "Hi\u1ec3n th\u1ecb l\u1ecbch D\u01b0\u01a1ng - \u00c2m tr\u00ean thanh tr\u1ea1ng th\u00e1i",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.lichvannien.purekfd",
+            "screenshots": [
+                "https://pbs.twimg.com/media/F-efgJLakAACNZN?format=jpg&name=medium"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "Real Weather",
+            "bundleid": "com.yangjiii.realweather",
+            "author": "YangJiii - Robin",
+            "description": "Weather on status bar",
+            "version": "Beta",
+            "long_description": "Weather on status bar",
+            "category": "Settings",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.realweather.purekfd",
+            "screenshots": [
+                "../Images/RepoImages/realweatherdemo.png"
+            ],
+            "accent": "#f9b72d"
+        },
+        {
+            "name": "MiuMin UI",
+            "bundleid": "com.yangjiii.miumincc",
+            "author": "YangJiii - Phuc Do \u2728 - boboi boy",
+            "description": "Change control center icon",
+            "version": "1.0",
+            "long_description": "Change control center icon",
+            "category": "Control Center",
+            "icon": "../Images/RepoImages/icon1.png",
+            "banner": "../Images/RepoImages/banner1.gif",
+            "path": "../Files/com.yangjiii.miumincc.purekfd",
+            "screenshots": [
+                "https://pbs.twimg.com/media/GBzeSv0aIAAOC--?format=jpg&name=large"
+            ],
+            "accent": "#f9b72d"
+        }
+    ]
+}
