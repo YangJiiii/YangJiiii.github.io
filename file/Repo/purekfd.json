@@ -1,4 +1,6 @@
 {
+    "spec":"1.0",
+    "repotype":"purekfdextended",
     "name": "YangJiii \ud83c\udf49 3.0 Repo's",
     "description": "YangJiii \ud83c\udf49 Repo's For You",
     "icon": "../Images/RepoImages/logoyangjiiinoel.png",
@@ -7,19 +9,19 @@
         {
             "name": "Font Apple Symbols",
             "bundleid": "com.yangjiii.applesymbols1.0",
-            "banner": "file/Repo/Banner/apple.png",
+            "banner": "Banner/plampyui.png",
             "showname": false
         },
         {
             "name": "Plampy UI",
             "bundleid": "com.yangjiii.plampyuicc",
-            "banner": "file/Repo/Banner/plampyui.png",
+            "banner": "Banner/plampyui.png",
             "showname": false
         },
         {
             "name": "Hide Manager",
             "bundleid": "com.yangjiii.hidemanager",
-            "banner": "file/Repo/Banner/hidemanager.png",
+            "banner": "Banner/plampyui.png",
             "showname": false
         }
     ],
