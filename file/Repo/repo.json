@@ -793,6 +793,11 @@
                   "Version": "1.0",
                   "Package": "https://yangjiii.tech/file/Files/com.yangjiii.lichvannien.misaka",
                   "Description": "Hiển thị lịch Dương - Âm trên thanh trạng thái"
+              },
+			  {
+                  "Version": "1.1",
+                  "Package": "https://yangjiii.tech/file/Files/com.yangjiii.lichvannien1.1.misaka",
+                  "Description": "Fix API"
               }
             ],
             "PackageID": "com.yangjiii.lichvannien"
