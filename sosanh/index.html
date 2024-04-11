@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Sách Đơn - YangJiii</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333333;
+            display: block;
+        }
+
+        textarea {
+            width: calc(100% - 40px);
+            height: 150px;
+            padding: 15px;
+            margin-bottom: 30px;
+            border: 2px solid #dddddd;
+            border-radius: 8px;
+            resize: none;
+            color: #555555;
+            background-color: #f5f5f5;
+            font-size: 16px;
+        }
+
+        .button-wrapper {
+            text-align: center;
+        }
+
+        .check-button {
+            background-color: #4cabe7;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .check-button:hover {
+            background-color: #1e90ff;
+        }
+
+        #result {
+            background-color: #f5f5f5;
+            border: 2px solid #dddddd;
+            border-radius: 8px;
+            color: #555555;
+            font-size: 16px;
+            width: calc(100% - 40px);
+            height: 150px;
+            padding: 15px;
+            margin-bottom: 20px;
+            resize: none;
+            overflow-y: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="barcode1">Nhập mã vạch Chít:</label>
+        <textarea id="barcode1" placeholder="Nhập mã vạch Chít..."></textarea>
+
+        <label for="barcode2">Nhập mã vạch 1C:</label>
+        <textarea id="barcode2" placeholder="Nhập mã vạch 1C..."></textarea>
+
+        <label for="result">Kết quả:</label>
+        <textarea id="result" readonly></textarea>
+
+        <div class="button-wrapper">
+            <a href="#" class="check-button" onclick="checkBarcodes()">Kiểm Tra</a>
+        </div>
+    </div>
+
+    <script>
+        function checkBarcodes() {
+            var barcode1Data = document.getElementById("barcode1").value.trim().split('\n');
+            var barcode2Data = document.getElementById("barcode2").value.trim().split('\n');
+
+            var results = [];
+
+            barcode1Data.forEach(function (barcode1) {
+                var match = false;
+                barcode2Data.forEach(function (barcode2) {
+                    var barcode2Prefix = barcode2.split("-")[0];
+                    var barcode2Suffix = barcode2.split("-")[1];
+                    if (barcode1 === barcode2Prefix || barcode1 === barcode2Suffix || barcode1 === barcode2.replace("-", "")) {
+                        match = true;
+                    }
+                });
+                if (!match) {
+                    results.push(barcode1);
+                }
+            });
+
+            barcode2Data.forEach(function (barcode2) {
+                var match = false;
+                barcode1Data.forEach(function (barcode1) {
+                    if (barcode2 === barcode1 + "-" + barcode1 || barcode1 + "-" + barcode1 === barcode2) {
+                        match = true;
+                    }
+                });
+                if (!match) {
+                    results.push(barcode2);
+                }
+            });
+
+            var resultTextarea = document.getElementById("result");
+            resultTextarea.value = results.length > 0 ? results.join('\n') : "Tất cả đều đẹp";
+        }
+    </script>
+</body>
+
+</html>
