@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search iOS Device</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Core Css -->
+  <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/spike/dist/assets/css/styles.css" />
+
+  <title>Spike Bootstrap Admin</title>
+  <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/spike/dist/assets/libs/prismjs/themes/prism-okaidia.min.css">
+</head>
+    <style>
+        /* Custom CSS */
+/* Custom CSS */
+
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+
+#suggestions {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: calc(100% - 22px);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion {
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion:hover {
+    background-color: #f2f2f2;
+}
+
+.suggestion:first-child {
+    border-top: 1px solid #ccc;
+}
+
+.suggestion:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search iOS Device</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="form-control">
+            <div id="suggestions"></div>
+            <button class="btn bg-primary-subtle text-primary" onclick="search()">Search</button>
+        </div>
+        <table class="table data-table" id="searchResult"></table>
+    </div>
+
+    <script>
+        // JavaScript Function
+        const deviceMapping = {
+    "iPhone (Original/1st Gen/EDGE)": "iphone1,1",
+    "iPhone 3G": "iphone1,2",
+    "iPhone 3GS": "iphone2,1",
+    "iPhone 4 (GSM)": "iphone3,1",
+    "iPhone 4 (CDMA/Verizon/Sprint)": "iphone3,3",
+    "iPhone 4S": "iphone4,1",
+    "iPhone 5 (GSM/LTE 4, 17/North America)": "iphone5,1",
+    "iPhone 5 (CDMA/LTE, Sprint/Verizon/KDDI)": "iphone5,2",
+    "iPhone 5c (GSM/North America/A1532)": "iphone5,3",
+    "iPhone 5s (GSM/North America/A1533)": "iphone6,1",
+    "iPhone 6 (GSM/North America/A1549)": "iphone7,2",
+    "iPhone 6 Plus (GSM/North America/A1522)": "iphone7,1",
+    "iPhone 6s (AT&T/SIM Free/A1633)": "iphone8,1",
+    "iPhone 6s Plus (AT&T/SIM Free/A1634)": "iphone8,2",
+    "iPhone SE (United States/A1662)": "iphone8,4",
+    "iPhone 7 (Verizon/Sprint/China/A1660)": "iphone9,1",
+    "iPhone 7 Plus (Verizon/Sprint/China/A1661)": "iphone9,2",
+    "iPhone 8 (Verizon/Sprint/China/A1863)": "iphone10,1",
+    "iPhone 8 Plus (Verizon/Sprint/China/A1864)": "iphone10,2",
+    "iPhone X (Verizon/Sprint/China/A1865)": "iphone10,3",
+    "iPhone Xs (US/Canada/Hong Kong/A1920)": "iphone11,2",
+    "iPhone Xs Max (US/Canada/A1921)": "iphone11,6",
+    "iPhone XR (US/Canada/A1984)": "iphone11,8",
+    "iPhone 11 (US/Canada/A2111)": "iphone12,1",
+    "iPhone 11 Pro (US/Canada/A2160)": "iphone12,3",
+    "iPhone 11 Pro Max (US/CA/A2161)": "iphone12,5",
+    "iPhone SE (2 - 4.7\" 2020 US/CA A2275)": "iphone12,8",
+    "iPhone 12 mini (US/A2176)": "iphone13,1",
+    "iPhone 12 (US/A2172)": "iphone13,2",
+    "iPhone 12 Pro (US/A2341)": "iphone13,3",
+    "iPhone 12 Pro Max (US/A2342)": "iphone13,4",
+    "iPhone 13 mini (US/A2481)": "iphone14,4",
+    "iPhone 13 (US/A2482)": "iphone14,5",
+    "iPhone 13 Pro (US/A2483)": "iphone14,2",
+    "iPhone 13 Pro Max (US/A2484)": "iphone14,3",
+    "iPhone SE (3 - 4.7\" 2022 US/CA A2595)": "iphone14,6",
+    "iPhone 14 (US/A2649)": "iphone14,7",
+    "iPhone 14 Plus (US/A2632)": "iphone14,8",
+    "iPhone 14 Pro (US/A2650)": "iphone15,2",
+    "iPhone 14 Pro Max (US/A2651)": "iphone15,3",
+    "iPod touch Original/1st Gen": "ipod1,1",
+    "iPod touch 2nd Gen": "ipod2,1",
+    "iPod touch 3rd Gen/32 & 64 GB": "ipod3,1",
+    "iPod touch 4th Gen/FaceTime": "ipod4,1",
+    "iPod touch 5th Gen": "ipod5,1",
+    "iPod touch 6th Gen, 2015": "ipod7,1",
+    "iPod touch 7th Gen, 2019": "ipod9,1",
+	"iPhone 15 Pro Max": "iphone15,5",
+    "iPhone 15 Pro": "iphone15,3",
+    "iPhone 15": "iphone15,4",
+	"iPhone 15": "iphone15,4",
+    "iPhone 15 Plus": "iphone15,2",
+    "iPad Pro 12.9\" (gen 6)": "ipad14,5",
+    "iPad Pro 11\" (gen 4)": "ipad14,3",
+    "iPad (gen 10)": "ipad14,4",
+    "iPad Air (gen 5)": "ipad14,2",
+    "iPod touch (gen 7)": "ipod11,1",
+	"iPad Pro (12.9-inch) (5th generation)": "ipad13,8",
+    "iPad Pro (11-inch) (3rd generation)": "ipad13,7",
+    "iPad Pro (12.9-inch) (4th generation)": "ipad8,8",
+    "iPad Pro (11-inch) (2nd generation)": "ipad8,9",
+    "iPad Pro (12.9-inch) (3rd generation)": "ipad8,7",
+    "iPad Pro (11-inch) (1st generation)": "ipad8,6",
+    "iPad Pro (12.9-inch) (2nd generation)": "ipad7,4",
+    "iPad Pro (10.5-inch)": "ipad7,3",
+    "iPad Pro (12.9-inch) (1st generation)": "ipad6,8",
+    "iPad Pro (9.7-inch)": "ipad6,7",
+    "iPad (9th generation)": "ipad9,1",
+    "iPad (8th generation)": "ipad11,1",
+    "iPad (7th generation)": "ipad7,11",
+    "iPad (6th generation)": "ipad7,5",
+    "iPad (5th generation)": "ipad6,11",
+    "iPad Air (4th generation)": "ipad13,2",
+    "iPad Air (3rd generation)": "ipad11,3",
+    "iPad Air (2nd generation)": "ipad5,4",
+    "iPad Air": "ipad4,2",
+    "iPad mini (6th generation)": "ipad14,1",
+    "iPad mini (5th generation)": "ipad11,1",
+    "iPad mini 4": "ipad5,2",
+
+    // iPod
+    "iPod touch (7th generation)": "ipod9,1",
+    "iPod touch (6th generation)": "ipod7,1",
+    "iPod touch (5th generation)": "ipod5,1",
+    // iPad models
+    // ...
+};
+
+        function showSuggestions() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const suggestions = document.getElementById('suggestions');
+            suggestions.innerHTML = '';
+
+            // Find devices containing the input
+            const matchedDevices = Object.keys(deviceMapping).filter(device => device.toLowerCase().includes(searchInput));
+
+            // Display suggestions
+            matchedDevices.forEach(device => {
+                const suggestion = document.createElement('div');
+                suggestion.classList.add('suggestion');
+                suggestion.textContent = device;
+                suggestion.onclick = () => {
+                    document.getElementById('searchInput').value = device;
+                    suggestions.innerHTML = '';
+                };
+                suggestions.appendChild(suggestion);
+            });
+
+            if (matchedDevices.length > 0) {
+                suggestions.style.display = 'block';
+            } else {
+                suggestions.style.display = 'none';
+            }
+        }
+
+async function search() {
+    const searchInput = document.getElementById('searchInput').value;
+    const searchResult = document.getElementById('searchResult');
+
+    if (searchInput in deviceMapping) {
+        const deviceCode = deviceMapping[searchInput];
+
+        try {
+            const response = await fetch(`https://api.ipsw.me/v4/device/${deviceCode}?type=ipsw`);
+            const data = await response.json();
+
+            if (data && data.firmwares && data.firmwares.length > 0) {
+                const firmwares = data.firmwares;
+                
+                let tableHTML = `<tr>
+                                    <th>Firmware</th>
+                                    <th>Build</th>
+                                    <th>Release Date</th>
+                                    <th>File Size</th>
+                                    <th>Signed</th>
+                                    <th>Download</th>
+                                </tr>`;
+                firmwares.forEach(firmware => {
+                    // Thêm chữ 'iOS' trước phiên bản firmware
+                    const iosVersion = 'iOS ' + firmware.version;
+                    // Determine button color based on signed status
+                    const signedClass = firmware.signed ? 'badge bg-success-subtle text-success' : 'badge bg-danger-subtle text-danger';
+                    const buttonText = firmware.signed ? 'Signed' : 'NOT Signed';
+                    const downloadClass = 'btn btn-rounded bg-success-subtle text-success'; // New class for the download button
+                    
+                    tableHTML += `<tr>
+                                    <td>${iosVersion}</td>
+                                    <td>${firmware.buildid}</td>
+                                    <td>${firmware.releasedate}</td>
+                                    <td>${(firmware.filesize / 1000000000).toFixed(2)} GB</td>
+                                    <td><button class="btn ${signedClass}">${buttonText}</button></td>
+                                    <td><a href="${firmware.url}" target="_blank" class="btn ${downloadClass}">Download</a></td>
+                                </tr>`;
+                });
+
+                searchResult.innerHTML = tableHTML;
+            } else {
+                searchResult.innerHTML = "<tr><td colspan='6'>Data not found or invalid input</td></tr>";
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            searchResult.innerHTML = "<tr><td colspan='6'>Failed to fetch data. Please try again later.</td></tr>";
+        }
+    } else {
+        searchResult.innerHTML = "<tr><td colspan='6'>Device not supported</td></tr>";
+    }
+}
+
+
+
+        // Event to show suggestions while typing
+        document.getElementById('searchInput').addEventListener('input', showSuggestions);
+    </script>
+</body>
+</html>
