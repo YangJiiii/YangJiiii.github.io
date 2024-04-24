@@ -13,6 +13,14 @@
   <link rel="shortcut icon" type="image/png" href="https://bootstrapdemos.wrappixel.com/spike/dist/assets/images/logos/favicon.png" />
 
   <!-- Core Css -->
+<!-- Trong phần CSS của bạn -->
+<style>
+  .modal {
+    display: none; /* Ẩn modal mặc định */
+  }
+</style>
+
+    <!-- Core Css -->
   <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/spike/dist/assets/css/styles.css" />
 
   <title>YangJiii</title>
@@ -25,16 +33,25 @@
 
 <body>
   <!-- Toast -->
-  <div class="toast toast-onload align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-body hstack align-items-start gap-6">
-      <i class="ti ti-alert-circle fs-6"></i>
-      <div>
-        <h5 class="text-white fs-3 mb-1">Xin Chào!!!</h5>
-        <h6 class="text-white fs-2 mb-0">12345678910</h6>
+<div class="modal" id="myModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header d-flex align-items-center">
+        <h4 class="modal-title" id="myLargeModalLabel">Thông Báo Cập Nhật</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <button type="button" class="btn-close btn-close-white fs-2 m-0 ms-auto shadow-none" data-bs-dismiss="toast" aria-label="Close"></button>
+      <div class="modal-body">
+        <p>- Giờ đây có thể hiển thị chính xác số lượng đơn gửi vào. các đơn trùng sẽ chỉ được tính là 1 đơn.</p>
+        <p>- Khắc phục bộ đếm tổng đơn gửi vào không được kèm cùng không có dữ liệu.</p>
+		<p><b>- Trường hợp các đơn không có dữ liệu nhưng vẫn có dữ liệu thời gian sẽ sớm được cập nhật. ( do đã gom nhưng các job mới nên chưa update 😭)</b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn bg-danger-subtle text-danger waves-effect text-start" data-bs-dismiss="modal">Đóng</button>
+      </div>
     </div>
   </div>
+</div>
+
   <!-- Preloader -->
   <div class="preloader">
     <img src="https://bootstrapdemos.wrappixel.com/spike/dist/assets/images/logos/loader.svg" alt="loader" class="lds-ripple img-fluid" />
@@ -3437,7 +3454,20 @@ async function getData() {
         };
         reader.readAsText(file);
     }
+	
+
 </script>
+<!-- Đặt script ở cuối thẻ body để đảm bảo mã JavaScript chạy sau khi tất cả các phần tử đã được tải -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Lấy ra phần tử của modal
+    var myModal = document.getElementById("myModal");
+    // Kích hoạt modal khi trang được tải
+    var modal = new bootstrap.Modal(myModal);
+    modal.show();
+  });
+</script>
+
 
     
   </div>
