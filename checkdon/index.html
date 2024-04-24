@@ -3245,172 +3245,201 @@
                             </div>
 </div>
 
+
 <script>
-<!--
-document.write(unescape("%3Cscript%3E%0A%20%20%20%20var%20dataForExcel%20%3D%20%5B%5D%3B%0A%20%20%20%20var%20totalCount%20%3D%200%3B%0A%20%20%20%20var%20exportCount%20%3D%200%3B%0A%20%20%20%20var%20collectCount%20%3D%200%3B%0A%20%20%20%20var%20noDataCount%20%3D%200%3B%0A%0A%20%20%20%20function%20updateCountButtons%28%29%20%7B%0A%20%20%20%20%20%20%20%20document.getElementById%28%22totalButton%22%29.innerText%20%3D%20totalCount%3B%0A%20%20%20%20%20%20%20%20document.getElementById%28%22exportButton%22%29.innerText%20%3D%20exportCount%3B%0A%20%20%20%20%20%20%20%20document.getElementById%28%22collectButton%22%29.innerText%20%3D%20collectCount%3B%0A%20%20%20%20%20%20%20%20document.getElementById%28%22noDataButton%22%29.innerText%20%3D%20noDataCount%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20async%20function%20getData%28%29%20%7B%0A%20%20%20%20%20%20%20%20//%20Clear%20old%20data%0A%20%20%20%20%20%20%20%20dataForExcel%20%3D%20%5B%5D%3B%0A%20%20%20%20%20%20%20%20totalCount%20%3D%200%3B%0A%20%20%20%20%20%20%20%20exportCount%20%3D%200%3B%0A%20%20%20%20%20%20%20%20collectCount%20%3D%200%3B%0A%20%20%20%20%20%20%20%20noDataCount%20%3D%200%3B%0A%0A%20%20%20%20%20%20%20%20var%20barcodes%20%3D%20document.getElementById%28%22barcodeInput%22%29.value.split%28%22%5Cn%22%29.filter%28barcode%20%3D%3E%20barcode.trim%28%29%20%21%3D%3D%20%22%22%29%3B%0A%20%20%20%20%20%20%20%20var%20resultDiv%20%3D%20document.getElementById%28%22result%22%29%3B%0A%20%20%20%20%20%20%20%20resultDiv.innerHTML%20%3D%20%22%22%3B%20//%20Clear%20previous%20results%0A%0A%20%20%20%20%20%20%20%20var%20tableHTML%20%3D%20%22%3Cdiv%20class%3D%27table-responsive%27%3E%3Ctable%20class%3D%27table%20table-bordered%27%3E%3Cthead%20class%3D%27thead-light%27%3E%3Ctr%3E%3Cth%3ESTT%3C/th%3E%3Cth%3EM%E3%20V%u1EA1ch%3C/th%3E%3Cth%3ETr%u1EA1ng%20Th%E1i%3C/th%3E%3Cth%3EC%u1EADp%20Nh%u1EADt%20L%FAc%3C/th%3E%3C/tr%3E%3C/thead%3E%3Ctbody%3E%22%3B%0A%0A%20%20%20%20%20%20%20%20var%20promises%20%3D%20barcodes.map%28%28barcode%2C%20index%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20url%20%3D%20%22https%3A//crm.tdic-jsc.com/api/v1/warehouse/fulfillments%3Fq%3D%22%20+%20barcode%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20fetch%28url%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.then%28response%20%3D%3E%20response.json%28%29%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.then%28data%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28data.fulfillments.length%20%3E%200%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20lastFulfillment%20%3D%20data.fulfillments%5Bdata.fulfillments.length%20-%201%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20scannerCode%20%3D%20formatScannerCode%28lastFulfillment.scanner_code%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20updatedAt%20%3D%20lastFulfillment.updated_at%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20barcode%20%3D%20lastFulfillment.barcode%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20tableHTML%20+%3D%20%22%3Ctr%3E%3Ctd%3E%22%20+%20%28index%20+%201%29%20+%20%22%3C/td%3E%3Ctd%3E%22%20+%20barcode%20+%20%22%3C/td%3E%3Ctd%3E%22%20+%20scannerCode%20+%20%22%3C/td%3E%3Ctd%3E%22%20+%20updatedAt%20+%20%22%3C/td%3E%3C/tr%3E%22%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Add%20data%20to%20the%20array%20for%20Excel%20export%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dataForExcel.push%28%5B%28index%20+%201%29%2C%20barcode%2C%20scannerCode%2C%20updatedAt%5D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Update%20counts%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20totalCount++%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28lastFulfillment.scanner_code%20%3D%3D%3D%20%22export%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20exportCount++%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20%28lastFulfillment.scanner_code%20%3D%3D%3D%20%22collect%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20collectCount++%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Update%20count%20buttons%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20updateCountButtons%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20tableHTML%20+%3D%20%22%3Ctr%3E%3Ctd%3E%22%20+%20%28index%20+%201%29%20+%20%22%3C/td%3E%3Ctd%3E%22%20+%20barcodes%5Bindex%5D%20+%20%22%3C/td%3E%3Ctd%3EKh%F4ng%20c%F3%20d%u1EEF%20li%u1EC7u%3C/td%3E%3Ctd%3EKh%F4ng%20c%F3%20d%u1EEF%20li%u1EC7u%3C/td%3E%3C/tr%3E%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20noDataCount++%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Add%20data%20for%20Excel%20export%20even%20if%20there%27s%20no%20data%20from%20API%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dataForExcel.push%28%5B%28index%20+%201%29%2C%20barcodes%5Bindex%5D%2C%20%22Kh%F4ng%20c%F3%20d%u1EEF%20li%u1EC7u%22%2C%20%22Kh%F4ng%20c%F3%20d%u1EEF%20li%u1EC7u%22%5D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Update%20count%20buttons%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20updateCountButtons%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.catch%28error%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20console.error%28%27Error%3A%27%2C%20error%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20resultDiv.innerHTML%20+%3D%20%22%3Cdiv%20class%3D%27alert%20alert-danger%27%20role%3D%27alert%27%3E%u0110%E3%20x%u1EA3y%20ra%20l%u1ED7i%20khi%20l%u1EA5y%20d%u1EEF%20li%u1EC7u%20t%u1EEB%20API%20cho%20m%E3%20barcode%20%22%20+%20barcode%20+%20%22.%3C/div%3E%22%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Increment%20noDataCount%20for%20error%20cases%20as%20well%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20noDataCount++%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Update%20count%20buttons%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20updateCountButtons%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20Promise.all%28promises%29%0A%20%20%20%20%20%20%20%20%20%20%20%20.then%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20tableHTML%20+%3D%20%22%3C/tbody%3E%3C/table%3E%3C/div%3E%22%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Hi%u1EC3n%20th%u1ECB%20k%u1EBFt%20qu%u1EA3%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20resultDiv.innerHTML%20%3D%20tableHTML%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20C%u1EADp%20nh%u1EADt%20s%u1ED1%20l%u01B0%u1EE3ng%20sau%20khi%20ho%E0n%20th%E0nh%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20updateCountButtons%28%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Hi%u1EC3n%20th%u1ECB%20modal%20th%F4ng%20b%E1o%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27%23infoModal%27%29.modal%28%27show%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%22totalModalText%22%29.innerText%20%3D%20totalCount%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%22exportModalText%22%29.innerText%20%3D%20exportCount%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%22collectModalText%22%29.innerText%20%3D%20collectCount%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%22noDataModalText%22%29.innerText%20%3D%20noDataCount%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Hi%u1EC3n%20th%u1ECB%20c%u1EEDa%20s%u1ED5%20modal%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27%23infoModal%27%29.modal%28%27show%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20formatScannerCode%28code%29%20%7B%0A%20%20%20%20%20%20%20%20if%20%28code%20%3D%3D%3D%20%22export%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%22%u0110%E3%20giao%20cho%20%u0110VVC%22%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20%28code%20%3D%3D%3D%20%22collect%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%22%u0110%E3%20gom%20%u0111%u01A1n%22%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%22Kh%F4ng%20c%F3%20d%u1EEF%20li%u1EC7u%22%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20exportToExcel%28%29%20%7B%0A%20%20%20%20%20%20%20%20var%20wb%20%3D%20XLSX.utils.book_new%28%29%3B%0A%20%20%20%20%20%20%20%20wb.Props%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20Title%3A%20%22Check%20Gom%20Xuat%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20Subject%3A%20%22Check%20Gom%20Xuat%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20Author%3A%20%22YangJiii%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20CreatedDate%3A%20new%20Date%28%29%0A%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20wb.SheetNames.push%28%22Data%22%29%3B%0A%20%20%20%20%20%20%20%20var%20ws_data%20%3D%20%5B%5B%27STT%27%2C%20%27M%E3%20V%u1EA1ch%27%2C%20%27Tr%u1EA1ng%20Th%E1i%27%2C%20%27C%u1EADp%20Nh%u1EADt%20L%FAc%27%5D%2C%20...dataForExcel%5D%3B%0A%20%20%20%20%20%20%20%20var%20ws%20%3D%20XLSX.utils.aoa_to_sheet%28ws_data%29%3B%0A%20%20%20%20%20%20%20%20wb.Sheets%5B%22Data%22%5D%20%3D%20ws%3B%0A%20%20%20%20%20%20%20%20var%20wbout%20%3D%20XLSX.write%28wb%2C%20%7BbookType%3A%27xlsx%27%2C%20%20type%3A%20%27binary%27%7D%29%3B%0A%20%20%20%20%20%20%20%20saveAs%28new%20Blob%28%5Bs2ab%28wbout%29%5D%2C%7Btype%3A%22application/octet-stream%22%7D%29%2C%20%27CheckGomXuat.xlsx%27%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20s2ab%28s%29%20%7B%0A%20%20%20%20%20%20%20%20var%20buf%20%3D%20new%20ArrayBuffer%28s.length%29%3B%0A%20%20%20%20%20%20%20%20var%20view%20%3D%20new%20Uint8Array%28buf%29%3B%0A%20%20%20%20%20%20%20%20for%20%28var%20i%3D0%3B%20i%3Cs.length%3B%20i++%29%20view%5Bi%5D%20%3D%20s.charCodeAt%28i%29%20%26%200xFF%3B%0A%20%20%20%20%20%20%20%20return%20buf%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20importFromTxt%28input%29%20%7B%0A%20%20%20%20%20%20%20%20var%20file%20%3D%20input.files%5B0%5D%3B%0A%20%20%20%20%20%20%20%20var%20reader%20%3D%20new%20FileReader%28%29%3B%0A%20%20%20%20%20%20%20%20reader.onload%20%3D%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20contents%20%3D%20e.target.result%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%22barcodeInput%22%29.value%20%3D%20contents%3B%0A%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20reader.readAsText%28file%29%3B%0A%20%20%20%20%7D%0A%3C/script%3E"));
-//-->
+    var dataForExcel = [];
+    var totalCount = 0;
+    var exportCount = 0;
+    var collectCount = 0;
+    var noDataCount = 0;
+
+    function updateCountButtons() {
+        document.getElementById("totalButton").innerText = totalCount;
+        document.getElementById("exportButton").innerText = exportCount;
+        document.getElementById("collectButton").innerText = collectCount;
+        document.getElementById("noDataButton").innerText = noDataCount;
+    }
+
+function updateTotalCount() {
+    var barcodeInput = document.getElementById("barcodeInput").value.trim();
+    var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== ""); // Lọc bỏ các giá trị trắng
+
+    // Tạo một mảng mới để lưu trữ các barcode duy nhất
+    var uniqueBarcodes = [];
+
+    // Lặp qua các barcode và chỉ thêm vào mảng nếu chưa tồn tại
+    barcodes.forEach(barcode => {
+        var trimmedBarcode = barcode.trim();
+        if (!uniqueBarcodes.includes(trimmedBarcode)) {
+            uniqueBarcodes.push(trimmedBarcode);
+        }
+    });
+
+    // Đếm số lượng barcode duy nhất
+    totalCount = uniqueBarcodes.length;
+
+    updateCountButtons();
+}
+
+
+
+
+async function getData() {
+    // Đặt lại các bộ đếm và mảng dữ liệu
+    dataForExcel = [];
+    totalCount = 0;
+    exportCount = 0;
+    collectCount = 0;
+    noDataCount = 0;
+
+    var barcodes = document.getElementById("barcodeInput").value.split("\n").filter(barcode => barcode.trim() !== "");
+    
+    // Loại bỏ các mã vạch trùng lặp
+    var uniqueBarcodes = Array.from(new Set(barcodes));
+
+    // Biến tạm để lưu trữ các mã vạch đã xử lý
+    var processedBarcodes = {};
+
+    var resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = ""; // Xóa kết quả trước đó
+
+    var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>STT</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th></tr></thead><tbody>";
+
+    var promises = uniqueBarcodes.map((barcode, index) => {
+        // Nếu mã vạch đã được xử lý trước đó, bỏ qua
+        if (processedBarcodes[barcode]) {
+            return Promise.resolve();
+        }
+
+        var url = "https://crm.tdic-jsc.com/api/v1/warehouse/fulfillments?q=" + barcode;
+
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.fulfillments.length > 0) {
+                    var lastFulfillment = data.fulfillments[data.fulfillments.length - 1];
+                    var scannerCode = formatScannerCode(lastFulfillment.scanner_code);
+                    var updatedAt = lastFulfillment.updated_at;
+
+                    tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>" + scannerCode + "</td><td>" + updatedAt + "</td></tr>";
+
+                    // Thêm dữ liệu vào mảng cho việc xuất Excel
+                    dataForExcel.push([(index + 1), barcode, scannerCode, updatedAt]);
+
+                    // Cập nhật các bộ đếm
+                    totalCount++;
+                    if (lastFulfillment.scanner_code === "export") {
+                        exportCount++;
+                    } else if (lastFulfillment.scanner_code === "collect") {
+                        collectCount++;
+                    }
+
+                    // Đánh dấu mã vạch này đã được xử lý
+                    processedBarcodes[barcode] = true;
+
+                    // Cập nhật nút đếm
+                    updateCountButtons();
+                } else {
+                    tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
+                    noDataCount++;
+
+                    // Thêm dữ liệu cho việc xuất Excel ngay cả khi không có dữ liệu từ API
+                    dataForExcel.push([(index + 1), barcode, "Không có dữ liệu", "Không có dữ liệu"]);
+
+                    // Cập nhật các bộ đếm
+                    totalCount++;
+
+                    // Đánh dấu mã vạch này đã được xử lý
+                    processedBarcodes[barcode] = true;
+
+                    // Cập nhật nút đếm
+                    updateCountButtons();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                resultDiv.innerHTML += "<div class='alert alert-danger' role='alert'>Đã xảy ra lỗi khi lấy dữ liệu từ API cho mã barcode " + barcode + ".</div>";
+
+                // Tăng noDataCount trong trường hợp lỗi
+                noDataCount++;
+                // Cập nhật nút đếm
+                updateCountButtons();
+            });
+    });
+
+    Promise.all(promises)
+        .then(() => {
+            tableHTML += "</tbody></table></div>";
+
+            // Hiển thị kết quả
+            resultDiv.innerHTML = tableHTML;
+
+            // Cập nhật số lượng sau khi hoàn thành
+            updateCountButtons();
+
+            // Hiển thị modal thông báo
+            $('#infoModal').modal('show');
+            document.getElementById("totalModalText").innerText = totalCount;
+            document.getElementById("exportModalText").innerText = exportCount;
+            document.getElementById("collectModalText").innerText = collectCount;
+            document.getElementById("noDataModalText").innerText = noDataCount;
+            // Hiển thị cửa sổ modal
+            $('#infoModal').modal('show');
+        });
+}
+
+
+
+    // Hàm loại bỏ các giá trị trùng lặp từ mảng
+    function removeDuplicates(array) {
+        return [...new Set(array)];
+    }
+
+    function formatScannerCode(code) {
+        if (code === "export") {
+            return "Đã giao cho ĐVVC";
+        } else if (code === "collect") {
+            return "Đã gom đơn";
+        } else {
+            return "Không có dữ liệu";
+        }
+    }
+
+    function exportToExcel() {
+        var wb = XLSX.utils.book_new();
+        wb.Props = {
+            Title: "Check Gom Xuat",
+            Subject: "Check Gom Xuat",
+            Author: "YangJiii",
+            CreatedDate: new Date()
+        };
+        wb.SheetNames.push("Data");
+        var ws_data = [['STT', 'Mã Vạch', 'Trạng Thái', 'Cập Nhật Lúc'], ...dataForExcel];
+        var ws = XLSX.utils.aoa_to_sheet(ws_data);
+        wb.Sheets["Data"] = ws;
+        var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
+        saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'CheckGomXuat.xlsx');
+    }
+
+    function s2ab(s) {
+        var buf = new ArrayBuffer(s.length);
+        var view = new Uint8Array(buf);
+        for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+        return buf;
+    }
+
+    function importFromTxt(input) {
+        var file = input.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var contents = e.target.result;
+            document.getElementById("barcodeInput").value = contents;
+        };
+        reader.readAsText(file);
+    }
 </script>
-                </div>
-                <div class="d-flex align-items-center justify-content-between mt-10">
-                  <p class="mb-0 fw-normal"> </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script>
-  function handleColorTheme(e) {
-    document.documentElement.setAttribute("data-color-theme", e);
-  }
-</script>
-    <button class="btn btn-primary p-3 rounded-circle d-flex align-items-center justify-content-center customizer-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-      <i class="icon ti ti-settings fs-7"></i>
-    </button>
 
-    <div class="offcanvas customizer offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
-        <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">
-          Settings
-        </h4>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body h-n80" data-simplebar>
-        <h6 class="fw-semibold fs-4 mb-2">Theme</h6>
-
-        <div class="d-flex flex-row gap-3 customizer-box" role="group">
-          <input type="radio" class="btn-check light-layout" name="theme-layout" id="light-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary" for="light-layout">
-            <i class="icon ti ti-brightness-up fs-7 me-2"></i>Light
-          </label>
-
-          <input type="radio" class="btn-check dark-layout" name="theme-layout" id="dark-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary" for="dark-layout">
-            <i class="icon ti ti-moon fs-7 me-2"></i>Dark
-          </label>
-        </div>
-
-        <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Direction</h6>
-        <div class="d-flex flex-row gap-3 customizer-box" role="group">
-          <input type="radio" class="btn-check" name="direction-l" id="ltr-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary" for="ltr-layout">
-            <i class="icon ti ti-text-direction-ltr fs-7 me-2"></i>LTR
-          </label>
-
-          <input type="radio" class="btn-check" name="direction-l" id="rtl-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary" for="rtl-layout">
-            <i class="icon ti ti-text-direction-rtl fs-7 me-2"></i>RTL
-          </label>
-        </div>
-
-        <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Colors</h6>
-
-        <div class="d-flex flex-row flex-wrap gap-3 customizer-box color-pallete" role="group">
-          <input type="radio" class="btn-check" name="color-theme-layout" id="Blue_Theme" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Blue_Theme')" for="Blue_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="BLUE_THEME">
-            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-1">
-              <i class="ti ti-check text-white d-flex icon fs-5"></i>
-            </div>
-          </label>
-
-          <input type="radio" class="btn-check" name="color-theme-layout" id="Aqua_Theme" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Aqua_Theme')" for="Aqua_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="AQUA_THEME">
-            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-2">
-              <i class="ti ti-check text-white d-flex icon fs-5"></i>
-            </div>
-          </label>
-
-          <input type="radio" class="btn-check" name="color-theme-layout" id="Purple_Theme" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Purple_Theme')" for="Purple_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="PURPLE_THEME">
-            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-3">
-              <i class="ti ti-check text-white d-flex icon fs-5"></i>
-            </div>
-          </label>
-
-          <input type="radio" class="btn-check" name="color-theme-layout" id="green-theme-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Green_Theme')" for="green-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="GREEN_THEME">
-            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-4">
-              <i class="ti ti-check text-white d-flex icon fs-5"></i>
-            </div>
-          </label>
-
-          <input type="radio" class="btn-check" name="color-theme-layout" id="cyan-theme-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Cyan_Theme')" for="cyan-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CYAN_THEME">
-            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-5">
-              <i class="ti ti-check text-white d-flex icon fs-5"></i>
-            </div>
-          </label>
-
-          <input type="radio" class="btn-check" name="color-theme-layout" id="orange-theme-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Orange_Theme')" for="orange-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ORANGE_THEME">
-            <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-6">
-              <i class="ti ti-check text-white d-flex icon fs-5"></i>
-            </div>
-          </label>
-        </div>
-
-        <h6 class="mt-5 fw-semibold fs-4 mb-2">Layout Type</h6>
-        <div class="d-flex flex-row gap-3 customizer-box" role="group">
-          <div>
-            <input type="radio" class="btn-check" name="page-layout" id="vertical-layout" autocomplete="off" />
-            <label class="btn p-9 btn-outline-primary" for="vertical-layout">
-              <i class="icon ti ti-layout-sidebar-right fs-7 me-2"></i>Vertical
-            </label>
-          </div>
-          <div>
-            <input type="radio" class="btn-check" name="page-layout" id="horizontal-layout" autocomplete="off" />
-            <label class="btn p-9 btn-outline-primary" for="horizontal-layout">
-              <i class="icon ti ti-layout-navbar fs-7 me-2"></i>Horizontal
-            </label>
-          </div>
-        </div>
-
-        <h6 class="mt-5 fw-semibold fs-4 mb-2">Container Option</h6>
-
-        <div class="d-flex flex-row gap-3 customizer-box" role="group">
-          <input type="radio" class="btn-check" name="layout" id="boxed-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary" for="boxed-layout">
-            <i class="icon ti ti-layout-distribute-vertical fs-7 me-2"></i>Boxed
-          </label>
-
-          <input type="radio" class="btn-check" name="layout" id="full-layout" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary" for="full-layout">
-            <i class="icon ti ti-layout-distribute-horizontal fs-7 me-2"></i>Full
-          </label>
-        </div>
-
-        <h6 class="fw-semibold fs-4 mb-2 mt-5">Sidebar Type</h6>
-        <div class="d-flex flex-row gap-3 customizer-box" role="group">
-          <a href="javascript:void(0)" class="fullsidebar">
-            <input type="radio" class="btn-check" name="sidebar-type" id="full-sidebar" autocomplete="off" />
-            <label class="btn p-9 btn-outline-primary" for="full-sidebar">
-              <i class="icon ti ti-layout-sidebar-right fs-7 me-2"></i>Full
-            </label>
-          </a>
-          <div>
-            <input type="radio" class="btn-check " name="sidebar-type" id="mini-sidebar" autocomplete="off" />
-            <label class="btn p-9 btn-outline-primary" for="mini-sidebar">
-              <i class="icon ti ti-layout-sidebar fs-7 me-2"></i>Collapse
-            </label>
-          </div>
-        </div>
-
-        <h6 class="mt-5 fw-semibold fs-4 mb-2">Card With</h6>
-
-        <div class="d-flex flex-row gap-3 customizer-box" role="group">
-          <input type="radio" class="btn-check" name="card-layout" id="card-with-border" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary" for="card-with-border">
-            <i class="icon ti ti-border-outer fs-7 me-2"></i>Border
-          </label>
-
-          <input type="radio" class="btn-check" name="card-layout" id="card-without-border" autocomplete="off" />
-          <label class="btn p-9 btn-outline-primary" for="card-without-border">
-            <i class="icon ti ti-border-none fs-7 me-2"></i>Shadow
-          </label>
-        </div>
-      </div>
-    </div>
+    
   </div>
   <div class="dark-transparent sidebartoggler"></div>
   </div>
