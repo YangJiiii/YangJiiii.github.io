@@ -14,6 +14,37 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
     <!--begin::Head-->
     <head>
+	    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style for the popup */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: visible;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #content {
+            display: none;
+        }
+    </style>
         <title>Test01</title>
         <meta charset="utf-8">
         <meta property="og:locale" content="en_US">
@@ -119,6 +150,13 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Menu-->
 </div>
 </div>
+	<div class="popup" id="popup">
+        <div class="popup-content">
+            <h4>Vui Lòng Nhập Mật Khẩu ( Mật Khẩu Demo : 123 )</h4>
+            <input type="password" id="passwordInput" placeholder="Nhập mật khẩu">
+           <p> <button class="btn btn-light-info" onclick="checkPassword()">Đăng Nhập</button>
+        </div>
+    </div>
 <!--end::Menu wrapper-->
 	<!--begin::Logo wrapper-->
 <div class="d-flex align-items-center">
@@ -4350,8 +4388,20 @@ License: For each use you must have a valid license purchased only from above li
 <!--end::Modal - Users Search-->            <!--end::Modals-->
         
         <!--begin::Javascript-->
-		
-		
+			
+<script>
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const correctPassword = '123';
+
+            if (password === correctPassword) {
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Mật khẩu sai. vui lòng thử lại.');
+            }
+        }
+    </script>	
 <!-- Modal -->
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
