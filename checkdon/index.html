@@ -4389,135 +4389,130 @@ License: For each use you must have a valid license purchased only from above li
         document.getElementById("noDataButton").innerText = noDataCount;
     }
 
-function updateTotalCount() {
-    var barcodeInput = document.getElementById("barcodeInput").value.trim();
-    var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== ""); // Lọc bỏ các giá trị trắng
+    function updateTotalCount() {
+        var barcodeInput = document.getElementById("barcodeInput").value.trim();
+        var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== ""); // Lọc bỏ các giá trị trắng
 
-    // Tạo một mảng mới để lưu trữ các barcode duy nhất
-    var uniqueBarcodes = [];
+        // Tạo một mảng mới để lưu trữ các barcode duy nhất
+        var uniqueBarcodes = [];
 
-    // Lặp qua các barcode và chỉ thêm vào mảng nếu chưa tồn tại
-    barcodes.forEach(barcode => {
-        var trimmedBarcode = barcode.trim();
-        if (!uniqueBarcodes.includes(trimmedBarcode)) {
-            uniqueBarcodes.push(trimmedBarcode);
-        }
-    });
-
-    // Đếm số lượng barcode duy nhất
-    totalCount = uniqueBarcodes.length;
-
-    updateCountButtons();
-}
-
-
-
-
-async function getData() {
-    // Đặt lại các bộ đếm và mảng dữ liệu
-    dataForExcel = [];
-    totalCount = 0;
-    exportCount = 0;
-    collectCount = 0;
-    noDataCount = 0;
-
-    var barcodes = document.getElementById("barcodeInput").value.split("\n").filter(barcode => barcode.trim() !== "");
-    
-    // Loại bỏ các mã vạch trùng lặp
-    var uniqueBarcodes = Array.from(new Set(barcodes));
-
-    // Biến tạm để lưu trữ các mã vạch đã xử lý
-    var processedBarcodes = {};
-
-    var resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = ""; // Xóa kết quả trước đó
-
-    var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>STT</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th></tr></thead><tbody>";
-
-    var promises = uniqueBarcodes.map((barcode, index) => {
-        // Nếu mã vạch đã được xử lý trước đó, bỏ qua
-        if (processedBarcodes[barcode]) {
-            return Promise.resolve();
-        }
-
-        var url = "https://crm.tdic-jsc.com/api/v1/warehouse/fulfillments?q=" + barcode;
-
-        return fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (data.fulfillments.length > 0) {
-                    var lastFulfillment = data.fulfillments[data.fulfillments.length - 1];
-                    var scannerCode = formatScannerCode(lastFulfillment.scanner_code);
-                    var updatedAt = lastFulfillment.updated_at;
-
-                    tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>" + scannerCode + "</td><td>" + updatedAt + "</td></tr>";
-
-                    // Thêm dữ liệu vào mảng cho việc xuất Excel
-                    dataForExcel.push([(index + 1), barcode, scannerCode, updatedAt]);
-
-                    // Cập nhật các bộ đếm
-                    totalCount++;
-                    if (lastFulfillment.scanner_code === "export") {
-                        exportCount++;
-                    } else if (lastFulfillment.scanner_code === "collect") {
-                        collectCount++;
-                    }
-
-                    // Đánh dấu mã vạch này đã được xử lý
-                    processedBarcodes[barcode] = true;
-
-                    // Cập nhật nút đếm
-                    updateCountButtons();
-                } else {
-                    tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
-                    noDataCount++;
-
-                    // Thêm dữ liệu cho việc xuất Excel ngay cả khi không có dữ liệu từ API
-                    dataForExcel.push([(index + 1), barcode, "Không có dữ liệu", "Không có dữ liệu"]);
-
-                    // Cập nhật các bộ đếm
-                    totalCount++;
-
-                    // Đánh dấu mã vạch này đã được xử lý
-                    processedBarcodes[barcode] = true;
-
-                    // Cập nhật nút đếm
-                    updateCountButtons();
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                resultDiv.innerHTML += "<div class='alert alert-danger' role='alert'>Đã xảy ra lỗi khi lấy dữ liệu từ API cho mã barcode " + barcode + ".</div>";
-
-                // Tăng noDataCount trong trường hợp lỗi
-                noDataCount++;
-                // Cập nhật nút đếm
-                updateCountButtons();
-            });
-    });
-
-    Promise.all(promises)
-        .then(() => {
-            tableHTML += "</tbody></table></div>";
-
-            // Hiển thị kết quả
-            resultDiv.innerHTML = tableHTML;
-
-            // Cập nhật số lượng sau khi hoàn thành
-            updateCountButtons();
-
-            // Hiển thị modal thông báo
-            $('#infoModal').modal('show');
-            document.getElementById("totalModalText").innerText = totalCount;
-            document.getElementById("exportModalText").innerText = exportCount;
-            document.getElementById("collectModalText").innerText = collectCount;
-            document.getElementById("noDataModalText").innerText = noDataCount;
-            // Hiển thị cửa sổ modal
-            $('#infoModal').modal('show');
+        // Lặp qua các barcode và chỉ thêm vào mảng nếu chưa tồn tại
+        barcodes.forEach(barcode => {
+            var trimmedBarcode = barcode.trim();
+            if (!uniqueBarcodes.includes(trimmedBarcode)) {
+                uniqueBarcodes.push(trimmedBarcode);
+            }
         });
-}
 
+        // Đếm số lượng barcode duy nhất
+        totalCount = uniqueBarcodes.length;
 
+        updateCountButtons();
+    }
+
+    async function getData() {
+        // Đặt lại các bộ đếm và mảng dữ liệu
+        dataForExcel = [];
+        totalCount = 0;
+        exportCount = 0;
+        collectCount = 0;
+        noDataCount = 0;
+
+        var barcodes = document.getElementById("barcodeInput").value.split("\n").filter(barcode => barcode.trim() !== "");
+
+        // Loại bỏ các mã vạch trùng lặp
+        var uniqueBarcodes = Array.from(new Set(barcodes));
+
+        // Biến tạm để lưu trữ các mã vạch đã xử lý
+        var processedBarcodes = {};
+
+        var resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = ""; // Xóa kết quả trước đó
+
+        var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>STT</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th></tr></thead><tbody>";
+
+        var promises = uniqueBarcodes.map((barcode, index) => {
+            // Nếu mã vạch đã được xử lý trước đó, bỏ qua
+            if (processedBarcodes[barcode]) {
+                return Promise.resolve();
+            }
+
+            var url = "https://crm.tdic-jsc.com/api/v1/warehouse/fulfillments?q=" + barcode;
+
+            return fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.fulfillments.length > 0) {
+                        var lastFulfillment = data.fulfillments[data.fulfillments.length - 1];
+                        var scannerCode = formatScannerCode(lastFulfillment.scanner_code);
+                        var updatedAt = formatDateToGMT7(lastFulfillment.updated_at);
+
+                        tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>" + scannerCode + "</td><td>" + updatedAt + "</td></tr>";
+
+                        // Thêm dữ liệu vào mảng cho việc xuất Excel
+                        dataForExcel.push([(index + 1), barcode, scannerCode, updatedAt]);
+
+                        // Cập nhật các bộ đếm
+                        totalCount++;
+                        if (lastFulfillment.scanner_code === "export") {
+                            exportCount++;
+                        } else if (lastFulfillment.scanner_code === "collect") {
+                            collectCount++;
+                        }
+
+                        // Đánh dấu mã vạch này đã được xử lý
+                        processedBarcodes[barcode] = true;
+
+                        // Cập nhật nút đếm
+                        updateCountButtons();
+                    } else {
+                        tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
+                        noDataCount++;
+
+                        // Thêm dữ liệu cho việc xuất Excel ngay cả khi không có dữ liệu từ API
+                        dataForExcel.push([(index + 1), barcode, "Không có dữ liệu", "Không có dữ liệu"]);
+
+                        // Cập nhật các bộ đếm
+                        totalCount++;
+
+                        // Đánh dấu mã vạch này đã được xử lý
+                        processedBarcodes[barcode] = true;
+
+                        // Cập nhật nút đếm
+                        updateCountButtons();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    resultDiv.innerHTML += "<div class='alert alert-danger' role='alert'>Đã xảy ra lỗi khi lấy dữ liệu từ API cho mã barcode " + barcode + ".</div>";
+
+                    // Tăng noDataCount trong trường hợp lỗi
+                    noDataCount++;
+                    // Cập nhật nút đếm
+                    updateCountButtons();
+                });
+        });
+
+        Promise.all(promises)
+            .then(() => {
+                tableHTML += "</tbody></table></div>";
+
+                // Hiển thị kết quả
+                resultDiv.innerHTML = tableHTML;
+
+                // Cập nhật số lượng sau khi hoàn thành
+                updateCountButtons();
+
+                // Hiển thị modal thông báo
+                $('#infoModal').modal('show');
+                document.getElementById("totalModalText").innerText = totalCount;
+                document.getElementById("exportModalText").innerText = exportCount;
+                document.getElementById("collectModalText").innerText = collectCount;
+                document.getElementById("noDataModalText").innerText = noDataCount;
+                // Hiển thị cửa sổ modal
+                $('#infoModal').modal('show');
+            });
+    }
 
     // Hàm loại bỏ các giá trị trùng lặp từ mảng
     function removeDuplicates(array) {
@@ -4532,6 +4527,22 @@ async function getData() {
         } else {
             return "Không có dữ liệu";
         }
+    }
+
+    function formatDateToGMT7(dateString) {
+        var date = new Date(dateString);
+        // Chuyển đổi thời gian sang GMT+7
+        var offset = 7 * 60; // GMT+7 offset in minutes
+        date.setMinutes(date.getMinutes() + offset);
+
+        // Định dạng lại thời gian
+        var hours = date.getUTCHours().toString().padStart(2, '0');
+        var minutes = date.getUTCMinutes().toString().padStart(2, '0');
+        var day = date.getUTCDate().toString().padStart(2, '0');
+        var month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); // Tháng bắt đầu từ 0
+        var year = date.getUTCFullYear();
+
+        return `${hours}:${minutes} ${day}/${month}/${year}`;
     }
 
     function exportToExcel() {
@@ -4566,9 +4577,8 @@ async function getData() {
         };
         reader.readAsText(file);
     }
-	
-
 </script>
+
 <!-- Đặt script ở cuối thẻ body để đảm bảo mã JavaScript chạy sau khi tất cả các phần tử đã được tải -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
