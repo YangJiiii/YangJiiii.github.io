@@ -14,34 +14,57 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
     <!--begin::Head-->
     <head>
-	    <style>
-        body {
+	   <style>
+        /* Định dạng cho popup */
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: none; /* Ban đầu ẩn popup */
+            width: 300px;
+            text-align: center;
             font-family: Arial, sans-serif;
         }
-
-        /* Style for the popup */
-        .popup {
+        #overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            visibility: visible;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Ban đầu ẩn overlay */
         }
-
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        #popup h2 {
+            margin-bottom: 20px;
+            color: #333;
         }
-
-        #content {
+        #popup input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #popup button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #popup button:hover {
+            background-color: #45a049;
+        }
+        #errorMessage {
+            margin-top: 10px;
+            color: red;
             display: none;
         }
     </style>
@@ -150,13 +173,43 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Menu-->
 </div>
 </div>
-	<div class="popup" id="popup">
-        <div class="popup-content">
-            <h4>Vui Lòng Nhập Mật Khẩu ( Mật Khẩu Demo : 123 )</h4>
-            <input type="password" id="passwordInput" placeholder="Nhập mật khẩu">
-           <p> <button class="btn btn-light-info" onclick="checkPassword()">Đăng Nhập</button>
-        </div>
+	<div id="overlay"></div>
+    <div id="popup">
+        <h2>Xin vui lòng nhập mã truy cập</h2>
+		<p><h4>mã dùng thử : 123456</h4>
+        <input type="text" id="accessCode" placeholder="Nhập mã truy cập">
+        <button onclick="checkAccessCode()">Đăng Nhập</button>
+        <p id="errorMessage">Mã truy cập không đúng. Vui lòng thử lại.</p>
     </div>
+
+    <script>
+        // Mã truy cập hợp lệ
+        const validAccessCode = "123456";
+
+        // Hiển thị popup và overlay khi trang web tải
+        window.onload = function() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+
+            // Thêm sự kiện keydown cho ô nhập liệu
+            document.getElementById('accessCode').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    checkAccessCode();
+                }
+            });
+        };
+
+        // Kiểm tra mã truy cập
+        function checkAccessCode() {
+            const userCode = document.getElementById('accessCode').value;
+            if (userCode === validAccessCode) {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('popup').style.display = 'none';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        }
+    </script>
 <!--end::Menu wrapper-->
 	<!--begin::Logo wrapper-->
 <div class="d-flex align-items-center">
@@ -4648,6 +4701,7 @@ License: For each use you must have a valid license purchased only from above li
       </div>
       <div class="modal-body">
         <p>- Cập nhật thời gian chính xác</p>
+		<p>- Hạn dùng thử sẽ hết hạn ngày 20/06/2024 - Vui lòng nạp VIP để truy cập</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn bg-danger-subtle text-danger waves-effect text-start" data-bs-dismiss="modal">Đóng</button>
