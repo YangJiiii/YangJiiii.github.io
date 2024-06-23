@@ -173,42 +173,65 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Menu-->
 </div>
 </div>
-	<div id="overlay"></div>
-    <div id="popup">
-        <h2>Xin vui lòng nhập mã truy cập</h2>
-        <input type="text" id="accessCode" placeholder="Nhập mã truy cập">
-        <button onclick="checkAccessCode()">Đăng Nhập</button>
-        <p id="errorMessage">Mã truy cập không đúng. Vui lòng thử lại.</p>
-    </div>
+<div id="overlay"></div>
+                            <div id="popup">
+                                <h2>Bạn Có Phải Là Robot?</h2>
+                                <input type="text" id="accessCode" placeholder="Nhập mã truy cập">
+                                <button onclick="checkAccessCode()">Xác Minh</button>
+								<p>
+                                <p>Mã truy cập của bạn: <span id="generatedCode" onclick="copyToClipboard()"></span></p>
+                                <p id="errorMessage">Mã truy cập không đúng. Vui lòng thử lại.</p>
+                            </div>
 
-    <script>
-        // Mã truy cập hợp lệ
-        const validAccessCode = "J4Op3P46JX";
+                            <script>
+                                // Tạo mã truy cập ngẫu nhiên
+                                function generateAccessCode(length) {
+                                    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                                    let result = '';
+                                    for (let i = 0; i < length; i++) {
+                                        result += characters.charAt(Math.floor(Math.random() * characters.length));
+                                    }
+                                    return result;
+                                }
 
-        // Hiển thị popup và overlay khi trang web tải
-        window.onload = function() {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('popup').style.display = 'block';
+                                const validAccessCode = generateAccessCode(10);
 
-            // Thêm sự kiện keydown cho ô nhập liệu
-            document.getElementById('accessCode').addEventListener('keydown', function(event) {
-                if (event.key === 'Enter') {
-                    checkAccessCode();
-                }
-            });
-        };
+                                // Hiển thị mã truy cập khi trang web tải
+                                window.onload = function() {
+                                    document.getElementById('overlay').style.display = 'block';
+                                    document.getElementById('popup').style.display = 'block';
+                                    document.getElementById('generatedCode').textContent = validAccessCode;
 
-        // Kiểm tra mã truy cập
-        function checkAccessCode() {
-            const userCode = document.getElementById('accessCode').value;
-            if (userCode === validAccessCode) {
-                document.getElementById('overlay').style.display = 'none';
-                document.getElementById('popup').style.display = 'none';
-            } else {
-                document.getElementById('errorMessage').style.display = 'block';
-            }
-        }
-    </script>
+                                    document.getElementById('accessCode').addEventListener('keydown', function(event) {
+                                        if (event.key === 'Enter') {
+                                            checkAccessCode();
+                                        }
+                                    });
+                                };
+
+                                // Kiểm tra mã truy cập
+                                function checkAccessCode() {
+                                    const userCode = document.getElementById('accessCode').value;
+                                    if (userCode === validAccessCode) {
+                                        document.getElementById('overlay').style.display = 'none';
+                                        document.getElementById('popup').style.display = 'none';
+                                    } else {
+                                        document.getElementById('errorMessage').style.display = 'block';
+                                    }
+                                }
+
+                                // Copy to clipboard
+                                function copyToClipboard() {
+                                    const codeElement = document.getElementById('generatedCode');
+                                    const range = document.createRange();
+                                    range.selectNode(codeElement);
+                                    window.getSelection().removeAllRanges();
+                                    window.getSelection().addRange(range);
+                                    document.execCommand('copy');
+                                    window.getSelection().removeAllRanges();
+                                    alert('Mã truy cập đã được sao chép!');
+                                }
+                            </script>
 <!--end::Menu wrapper-->
 	<!--begin::Logo wrapper-->
 <div class="d-flex align-items-center">
