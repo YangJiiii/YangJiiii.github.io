@@ -4649,7 +4649,10 @@ License: For each use you must have a valid license purchased only from above li
             return "Đã giao cho ĐVVC";
         } else if (code === "collect") {
             return "Đã gom đơn";
-        } else {
+        } else if (code === "packing") {
+            return "Đóng Gói";
+        }
+		else {
             return "Không có dữ liệu";
         }
     }
