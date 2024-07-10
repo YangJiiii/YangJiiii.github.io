@@ -1156,6 +1156,15 @@ License: For each use you must have a valid license purchased only from above li
             <div class="fs-2 fw-bold text-danger" id="noDataButton">0</div>
             <!--end::Label-->
         </div>
+		 <div class="button button-custom rounded min-w-100px w-100 py-2 px-4 ">
+            <!--begin::Date-->                                     
+            <span class="fs-6 text-gray-600 fw-semibold">Đóng Gói</span>                                
+            <!--end::Date-->
+
+            <!--begin::Label-->
+            <div class="fs-2 fw-bold text-danger" id="packingButton">0</div>
+            <!--end::Label-->
+        </div>
         <!--end::Stat-->    
                                  
 </div>
@@ -4506,22 +4515,22 @@ License: For each use you must have a valid license purchased only from above li
     var exportCount = 0;
     var collectCount = 0;
     var noDataCount = 0;
+    var packingCount = 0;
 
     function updateCountButtons() {
         document.getElementById("totalButton").innerText = totalCount;
         document.getElementById("exportButton").innerText = exportCount;
         document.getElementById("collectButton").innerText = collectCount;
         document.getElementById("noDataButton").innerText = noDataCount;
+        document.getElementById("packingButton").innerText = packingCount;
     }
 
     function updateTotalCount() {
         var barcodeInput = document.getElementById("barcodeInput").value.trim();
-        var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== ""); // Lọc bỏ các giá trị trắng
+        var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== "");
 
-        // Tạo một mảng mới để lưu trữ các barcode duy nhất
         var uniqueBarcodes = [];
 
-        // Lặp qua các barcode và chỉ thêm vào mảng nếu chưa tồn tại
         barcodes.forEach(barcode => {
             var trimmedBarcode = barcode.trim();
             if (!uniqueBarcodes.includes(trimmedBarcode)) {
@@ -4529,35 +4538,51 @@ License: For each use you must have a valid license purchased only from above li
             }
         });
 
-        // Đếm số lượng barcode duy nhất
         totalCount = uniqueBarcodes.length;
 
         updateCountButtons();
     }
 
+    function getCarrierName(barcode) {
+        if (barcode.startsWith('8')) {
+            return 'J&T Express';
+        } else if (barcode.startsWith('E')) {
+            return 'Vietnam Post';
+		} else if (barcode.startsWith('SPXVN')) {
+            return 'SPX Express';
+        } else if (barcode.startsWith('G')) {
+            return 'Giao Hàng Nhanh';
+        } else if (barcode.startsWith('NJVN')) {
+            return 'NinjaVan';
+        } else if (barcode.startsWith('LMP')) {
+            return 'Lazada';
+        }		else if (barcode.startsWith('1')) {
+            return 'GHTK';
+        } else {
+            return 'Unknown';
+        }
+    }
+
     async function getData() {
-        // Đặt lại các bộ đếm và mảng dữ liệu
         dataForExcel = [];
         totalCount = 0;
         exportCount = 0;
         collectCount = 0;
         noDataCount = 0;
+        packingCount = 0;
 
         var barcodes = document.getElementById("barcodeInput").value.split("\n").filter(barcode => barcode.trim() !== "");
 
-        // Loại bỏ các mã vạch trùng lặp
         var uniqueBarcodes = Array.from(new Set(barcodes));
 
-        // Biến tạm để lưu trữ các mã vạch đã xử lý
         var processedBarcodes = {};
 
         var resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = ""; // Xóa kết quả trước đó
+        resultDiv.innerHTML = "";
 
-        var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>STT</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th></tr></thead><tbody>";
+        var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>Nhà Vận Chuyển</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th><th>Đóng Gói Lúc</th></tr></thead><tbody>";
 
         var promises = uniqueBarcodes.map((barcode, index) => {
-            // Nếu mã vạch đã được xử lý trước đó, bỏ qua
             if (processedBarcodes[barcode]) {
                 return Promise.resolve();
             }
@@ -4567,17 +4592,24 @@ License: For each use you must have a valid license purchased only from above li
             return fetch(url)
                 .then(response => response.json())
                 .then(data => {
+                    var carrierName = getCarrierName(barcode);
+
                     if (data.fulfillments.length > 0) {
                         var lastFulfillment = data.fulfillments[data.fulfillments.length - 1];
                         var scannerCode = formatScannerCode(lastFulfillment.scanner_code);
                         var updatedAt = formatDateToGMT7(lastFulfillment.updated_at);
 
-                        tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>" + scannerCode + "</td><td>" + updatedAt + "</td></tr>";
+                        var packingTime = "Không có dữ liệu";
+                        var packingFulfillment = data.fulfillments.find(fulfillment => fulfillment.scanner_code === "packing");
+                        if (packingFulfillment) {
+                            packingTime = formatDateToGMT7(packingFulfillment.updated_at);
+                            packingCount++;
+                        }
 
-                        // Thêm dữ liệu vào mảng cho việc xuất Excel
-                        dataForExcel.push([(index + 1), barcode, scannerCode, updatedAt]);
+                        tableHTML += "<tr><td>" + carrierName + "</td><td>" + barcode + "</td><td>" + scannerCode + "</td><td>" + updatedAt + "</td><td>" + packingTime + "</td></tr>";
 
-                        // Cập nhật các bộ đếm
+                        dataForExcel.push([carrierName, barcode, scannerCode, updatedAt, packingTime]);
+
                         totalCount++;
                         if (lastFulfillment.scanner_code === "export") {
                             exportCount++;
@@ -4585,25 +4617,19 @@ License: For each use you must have a valid license purchased only from above li
                             collectCount++;
                         }
 
-                        // Đánh dấu mã vạch này đã được xử lý
                         processedBarcodes[barcode] = true;
 
-                        // Cập nhật nút đếm
                         updateCountButtons();
                     } else {
-                        tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
+                        tableHTML += "<tr><td>" + carrierName + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
                         noDataCount++;
 
-                        // Thêm dữ liệu cho việc xuất Excel ngay cả khi không có dữ liệu từ API
-                        dataForExcel.push([(index + 1), barcode, "Không có dữ liệu", "Không có dữ liệu"]);
+                        dataForExcel.push([carrierName, barcode, "Không có dữ liệu", "Không có dữ liệu", "Không có dữ liệu"]);
 
-                        // Cập nhật các bộ đếm
                         totalCount++;
 
-                        // Đánh dấu mã vạch này đã được xử lý
                         processedBarcodes[barcode] = true;
 
-                        // Cập nhật nút đếm
                         updateCountButtons();
                     }
                 })
@@ -4611,9 +4637,7 @@ License: For each use you must have a valid license purchased only from above li
                     console.error('Error:', error);
                     resultDiv.innerHTML += "<div class='alert alert-danger' role='alert'>Đã xảy ra lỗi khi lấy dữ liệu từ API cho mã barcode " + barcode + ".</div>";
 
-                    // Tăng noDataCount trong trường hợp lỗi
                     noDataCount++;
-                    // Cập nhật nút đếm
                     updateCountButtons();
                 });
         });
@@ -4622,24 +4646,20 @@ License: For each use you must have a valid license purchased only from above li
             .then(() => {
                 tableHTML += "</tbody></table></div>";
 
-                // Hiển thị kết quả
                 resultDiv.innerHTML = tableHTML;
 
-                // Cập nhật số lượng sau khi hoàn thành
                 updateCountButtons();
 
-                // Hiển thị modal thông báo
                 $('#infoModal').modal('show');
                 document.getElementById("totalModalText").innerText = totalCount;
                 document.getElementById("exportModalText").innerText = exportCount;
                 document.getElementById("collectModalText").innerText = collectCount;
                 document.getElementById("noDataModalText").innerText = noDataCount;
-                // Hiển thị cửa sổ modal
+                document.getElementById("packingModalText").innerText = packingCount;
                 $('#infoModal').modal('show');
             });
     }
 
-    // Hàm loại bỏ các giá trị trùng lặp từ mảng
     function removeDuplicates(array) {
         return [...new Set(array)];
     }
@@ -4651,23 +4671,20 @@ License: For each use you must have a valid license purchased only from above li
             return "Đã gom đơn";
         } else if (code === "packing") {
             return "Đóng Gói";
-        }
-		else {
+        } else {
             return "Không có dữ liệu";
         }
     }
 
     function formatDateToGMT7(dateString) {
         var date = new Date(dateString);
-        // Chuyển đổi thời gian sang GMT+7
-        var offset = 7 * 60; // GMT+7 offset in minutes
+        var offset = 7 * 60;
         date.setMinutes(date.getMinutes() + offset);
 
-        // Định dạng lại thời gian
         var hours = date.getUTCHours().toString().padStart(2, '0');
         var minutes = date.getUTCMinutes().toString().padStart(2, '0');
         var day = date.getUTCDate().toString().padStart(2, '0');
-        var month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); // Tháng bắt đầu từ 0
+        var month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
         var year = date.getUTCFullYear();
 
         return `${hours}:${minutes} ${day}/${month}/${year}`;
@@ -4682,7 +4699,7 @@ License: For each use you must have a valid license purchased only from above li
             CreatedDate: new Date()
         };
         wb.SheetNames.push("Data");
-        var ws_data = [['STT', 'Mã Vạch', 'Trạng Thái', 'Cập Nhật Lúc'], ...dataForExcel];
+        var ws_data = [['Nhà Vận Chuyển', 'Mã Vạch', 'Trạng Thái', 'Cập Nhật Lúc', 'Đóng Gói Lúc'], ...dataForExcel];
         var ws = XLSX.utils.aoa_to_sheet(ws_data);
         wb.Sheets["Data"] = ws;
         var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
@@ -4706,6 +4723,9 @@ License: For each use you must have a valid license purchased only from above li
         reader.readAsText(file);
     }
 </script>
+
+
+
 
 <!-- Đặt script ở cuối thẻ body để đảm bảo mã JavaScript chạy sau khi tất cả các phần tử đã được tải -->
 <script>
