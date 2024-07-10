@@ -5,23 +5,16 @@
 	<key>PayloadContent</key>
 	<array>
 		<dict>
-			<key>PayloadCertificateFileName</key>
-			<string></string>
-			<key>PayloadContent</key>
-			<dict>
-				<key>AutoJoin</key>
-				<true/>
-				<key>EncryptionType</key>
-				<string>WPA2</string>
-				<key>HIDDEN_NETWORK</key>
-				<false/>
-				<key>IsHotspot</key>
-				<false/>
-				<key>Password</key>
-				<string>12345678</string>
-				<key>SSID_STR</key>
-				<string>Duong Lam</string>
-			</dict>
+			<key>AutoJoin</key>
+			<true/>
+			<key>EncryptionType</key>
+			<string>WPA</string>
+			<key>HIDDEN_NETWORK</key>
+			<false/>
+			<key>IsHotspot</key>
+			<false/>
+			<key>Password</key>
+			<string>12345678910jqk</string>
 			<key>PayloadDescription</key>
 			<string>Configures Wi-Fi settings</string>
 			<key>PayloadDisplayName</key>
@@ -36,6 +29,8 @@
 			<string>6DCCF9CE-94E0-44E3-9EC4-2E53F4716DA6</string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
+			<key>SSID_STR</key>
+			<string>Mang deu</string>
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
