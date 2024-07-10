@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadCertificateFileName</key>
+			<string></string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>AutoJoin</key>
+				<true/>
+				<key>EncryptionType</key>
+				<string>WPA2</string>
+				<key>HIDDEN_NETWORK</key>
+				<false/>
+				<key>IsHotspot</key>
+				<false/>
+				<key>Password</key>
+				<string>12345678910jqk</string>
+				<key>SSID_STR</key>
+				<string>Mang deu</string>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Configures Wi-Fi settings</string>
+			<key>PayloadDisplayName</key>
+			<string>Wi-Fi</string>
+			<key>PayloadIdentifier</key>
+			<string>com.example.wifi</string>
+			<key>PayloadOrganization</key>
+			<string>Your Organization</string>
+			<key>PayloadType</key>
+			<string>com.apple.wifi.managed</string>
+			<key>PayloadUUID</key>
+			<string>6DCCF9CE-94E0-44E3-9EC4-2E53F4716DA6</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Wi-Fi Configuration Profile</string>
+	<key>PayloadDisplayName</key>
+	<string>Wi-Fi Configuration Profile</string>
+	<key>PayloadIdentifier</key>
+	<string>com.example.wifi.profile</string>
+	<key>PayloadOrganization</key>
+	<string>Your Organization</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>A8A9B7CE-82E2-44B5-89F6-9F3B7C22FBAE</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
