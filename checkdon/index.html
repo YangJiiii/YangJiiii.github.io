@@ -4515,19 +4515,19 @@ License: For each use you must have a valid license purchased only from above li
     var exportCount = 0;
     var collectCount = 0;
     var noDataCount = 0;
-    var packingCount = 0; // Thêm biến đếm số đơn đóng gói
+    var packingCount = 0;
 
     function updateCountButtons() {
         document.getElementById("totalButton").innerText = totalCount;
         document.getElementById("exportButton").innerText = exportCount;
         document.getElementById("collectButton").innerText = collectCount;
         document.getElementById("noDataButton").innerText = noDataCount;
-        document.getElementById("packingButton").innerText = packingCount; // Cập nhật nút đếm số đơn đóng gói
+        document.getElementById("packingButton").innerText = packingCount;
     }
 
     function updateTotalCount() {
         var barcodeInput = document.getElementById("barcodeInput").value.trim();
-        var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== ""); // Lọc bỏ các giá trị trắng
+        var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== "");
 
         var uniqueBarcodes = [];
 
@@ -4543,13 +4543,27 @@ License: For each use you must have a valid license purchased only from above li
         updateCountButtons();
     }
 
+    function getCarrierName(barcode) {
+        if (barcode.startsWith('8')) {
+            return 'J&T express';
+        } else if (barcode.startsWith('E')) {
+            return 'Vnpost';
+        } else if (barcode.startsWith('NJVN')) {
+            return 'NinjaVan';
+        } else if (barcode.startsWith('1')) {
+            return 'GHTK';
+        } else {
+            return 'Unknown';
+        }
+    }
+
     async function getData() {
         dataForExcel = [];
         totalCount = 0;
         exportCount = 0;
         collectCount = 0;
         noDataCount = 0;
-        packingCount = 0; // Đặt lại biến đếm số đơn đóng gói
+        packingCount = 0;
 
         var barcodes = document.getElementById("barcodeInput").value.split("\n").filter(barcode => barcode.trim() !== "");
 
@@ -4560,7 +4574,7 @@ License: For each use you must have a valid license purchased only from above li
         var resultDiv = document.getElementById("result");
         resultDiv.innerHTML = "";
 
-        var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>STT</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th><th>Đóng Gói Lúc</th></tr></thead><tbody>";
+        var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>Nhà Vận Chuyển</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th><th>Đóng Gói Lúc</th></tr></thead><tbody>";
 
         var promises = uniqueBarcodes.map((barcode, index) => {
             if (processedBarcodes[barcode]) {
@@ -4572,6 +4586,8 @@ License: For each use you must have a valid license purchased only from above li
             return fetch(url)
                 .then(response => response.json())
                 .then(data => {
+                    var carrierName = getCarrierName(barcode);
+
                     if (data.fulfillments.length > 0) {
                         var lastFulfillment = data.fulfillments[data.fulfillments.length - 1];
                         var scannerCode = formatScannerCode(lastFulfillment.scanner_code);
@@ -4581,12 +4597,12 @@ License: For each use you must have a valid license purchased only from above li
                         var packingFulfillment = data.fulfillments.find(fulfillment => fulfillment.scanner_code === "packing");
                         if (packingFulfillment) {
                             packingTime = formatDateToGMT7(packingFulfillment.updated_at);
-                            packingCount++; // Tăng biến đếm số đơn đóng gói
+                            packingCount++;
                         }
 
-                        tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>" + scannerCode + "</td><td>" + updatedAt + "</td><td>" + packingTime + "</td></tr>";
+                        tableHTML += "<tr><td>" + carrierName + "</td><td>" + barcode + "</td><td>" + scannerCode + "</td><td>" + updatedAt + "</td><td>" + packingTime + "</td></tr>";
 
-                        dataForExcel.push([(index + 1), barcode, scannerCode, updatedAt, packingTime]);
+                        dataForExcel.push([carrierName, barcode, scannerCode, updatedAt, packingTime]);
 
                         totalCount++;
                         if (lastFulfillment.scanner_code === "export") {
@@ -4599,10 +4615,10 @@ License: For each use you must have a valid license purchased only from above li
 
                         updateCountButtons();
                     } else {
-                        tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
+                        tableHTML += "<tr><td>" + carrierName + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
                         noDataCount++;
 
-                        dataForExcel.push([(index + 1), barcode, "Không có dữ liệu", "Không có dữ liệu", "Không có dữ liệu"]);
+                        dataForExcel.push([carrierName, barcode, "Không có dữ liệu", "Không có dữ liệu", "Không có dữ liệu"]);
 
                         totalCount++;
 
@@ -4633,7 +4649,7 @@ License: For each use you must have a valid license purchased only from above li
                 document.getElementById("exportModalText").innerText = exportCount;
                 document.getElementById("collectModalText").innerText = collectCount;
                 document.getElementById("noDataModalText").innerText = noDataCount;
-                document.getElementById("packingModalText").innerText = packingCount; // Hiển thị số đơn đóng gói trong modal
+                document.getElementById("packingModalText").innerText = packingCount;
                 $('#infoModal').modal('show');
             });
     }
@@ -4677,7 +4693,7 @@ License: For each use you must have a valid license purchased only from above li
             CreatedDate: new Date()
         };
         wb.SheetNames.push("Data");
-        var ws_data = [['STT', 'Mã Vạch', 'Trạng Thái', 'Cập Nhật Lúc', 'Đóng Gói Lúc'], ...dataForExcel];
+        var ws_data = [['Nhà Vận Chuyển', 'Mã Vạch', 'Trạng Thái', 'Cập Nhật Lúc', 'Đóng Gói Lúc'], ...dataForExcel];
         var ws = XLSX.utils.aoa_to_sheet(ws_data);
         wb.Sheets["Data"] = ws;
         var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
@@ -4701,6 +4717,7 @@ License: For each use you must have a valid license purchased only from above li
         reader.readAsText(file);
     }
 </script>
+
 
 
 
