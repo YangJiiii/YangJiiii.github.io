@@ -18,9 +18,9 @@
 				<key>IsHotspot</key>
 				<false/>
 				<key>Password</key>
-				<string>12345678910jqk</string>
+				<string>12345678</string>
 				<key>SSID_STR</key>
-				<string>Mang deu</string>
+				<string>Duongminh</string>
 			</dict>
 			<key>PayloadDescription</key>
 			<string>Configures Wi-Fi settings</string>
