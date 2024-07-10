@@ -4545,12 +4545,18 @@ License: For each use you must have a valid license purchased only from above li
 
     function getCarrierName(barcode) {
         if (barcode.startsWith('8')) {
-            return 'J&T express';
+            return 'J&T Express';
         } else if (barcode.startsWith('E')) {
-            return 'Vnpost';
+            return 'Vietnam Post';
+		} else if (barcode.startsWith('SPXVN')) {
+            return 'SPX Express';
+        } else if (barcode.startsWith('G')) {
+            return 'Giao Hàng Nhanh';
         } else if (barcode.startsWith('NJVN')) {
             return 'NinjaVan';
-        } else if (barcode.startsWith('1')) {
+        } else if (barcode.startsWith('LMP')) {
+            return 'Lazada';
+        }		else if (barcode.startsWith('1')) {
             return 'GHTK';
         } else {
             return 'Unknown';
