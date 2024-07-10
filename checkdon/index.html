@@ -1156,6 +1156,15 @@ License: For each use you must have a valid license purchased only from above li
             <div class="fs-2 fw-bold text-danger" id="noDataButton">0</div>
             <!--end::Label-->
         </div>
+		 <div class="button button-custom rounded min-w-100px w-100 py-2 px-4 ">
+            <!--begin::Date-->                                     
+            <span class="fs-6 text-gray-600 fw-semibold">Đóng Gói</span>                                
+            <!--end::Date-->
+
+            <!--begin::Label-->
+            <div class="fs-2 fw-bold text-danger" id="packingButton">0</div>
+            <!--end::Label-->
+        </div>
         <!--end::Stat-->    
                                  
 </div>
@@ -4506,12 +4515,14 @@ License: For each use you must have a valid license purchased only from above li
     var exportCount = 0;
     var collectCount = 0;
     var noDataCount = 0;
+    var packingCount = 0; // Thêm biến đếm số đơn đóng gói
 
     function updateCountButtons() {
         document.getElementById("totalButton").innerText = totalCount;
         document.getElementById("exportButton").innerText = exportCount;
         document.getElementById("collectButton").innerText = collectCount;
         document.getElementById("noDataButton").innerText = noDataCount;
+        document.getElementById("packingButton").innerText = packingCount; // Cập nhật nút đếm số đơn đóng gói
     }
 
     function updateTotalCount() {
@@ -4538,6 +4549,7 @@ License: For each use you must have a valid license purchased only from above li
         exportCount = 0;
         collectCount = 0;
         noDataCount = 0;
+        packingCount = 0; // Đặt lại biến đếm số đơn đóng gói
 
         var barcodes = document.getElementById("barcodeInput").value.split("\n").filter(barcode => barcode.trim() !== "");
 
@@ -4569,6 +4581,7 @@ License: For each use you must have a valid license purchased only from above li
                         var packingFulfillment = data.fulfillments.find(fulfillment => fulfillment.scanner_code === "packing");
                         if (packingFulfillment) {
                             packingTime = formatDateToGMT7(packingFulfillment.updated_at);
+                            packingCount++; // Tăng biến đếm số đơn đóng gói
                         }
 
                         tableHTML += "<tr><td>" + (index + 1) + "</td><td>" + barcode + "</td><td>" + scannerCode + "</td><td>" + updatedAt + "</td><td>" + packingTime + "</td></tr>";
@@ -4620,6 +4633,7 @@ License: For each use you must have a valid license purchased only from above li
                 document.getElementById("exportModalText").innerText = exportCount;
                 document.getElementById("collectModalText").innerText = collectCount;
                 document.getElementById("noDataModalText").innerText = noDataCount;
+                document.getElementById("packingModalText").innerText = packingCount; // Hiển thị số đơn đóng gói trong modal
                 $('#infoModal').modal('show');
             });
     }
@@ -4687,6 +4701,7 @@ License: For each use you must have a valid license purchased only from above li
         reader.readAsText(file);
     }
 </script>
+
 
 
 <!-- Đặt script ở cuối thẻ body để đảm bảo mã JavaScript chạy sau khi tất cả các phần tử đã được tải -->
