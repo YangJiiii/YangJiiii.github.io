@@ -370,7 +370,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, ul, ol, li, input, button, textar
 					    <div class="app-card app-card-stat shadow-sm h-100">
 						    <div class="app-card-body p-3 p-lg-4">
 							    <h4 class="stats-type mb-1">Gói Không Dữ Liệu</h4>
-							    <h4 class="stats-figure">0</h4>
+							    <h4 class="stats-figure" id="packingNoDataButton">0</h4>
 							    <div class="stats-meta">Đơn</div>
 						    </div><!--//app-card-body-->
 						    <a class="app-card-link-mask" href="#"></a>
@@ -422,218 +422,225 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, ul, ol, li, input, button, textar
     <!-- Page Specific JS -->
     <script src="assets/js/app.js"></script> 
 <script>
-    var dataForExcel = [];
-    var totalCount = 0;
-    var exportCount = 0;
-    var collectCount = 0;
-    var noDataCount = 0;
-    var packingCount = 0;
+var dataForExcel = [];
+var totalCount = 0;
+var exportCount = 0;
+var collectCount = 0;
+var noDataCount = 0;
+var packingCount = 0;
+var packingNoDataCount = 0;
 
-    function updateCountButtons() {
-        document.getElementById("totalButton").innerText = totalCount;
-        document.getElementById("exportButton").innerText = exportCount;
-        document.getElementById("collectButton").innerText = collectCount;
-        document.getElementById("noDataButton").innerText = noDataCount;
-        document.getElementById("packingButton").innerText = packingCount;
-    }
+function updateCountButtons() {
+    document.getElementById("totalButton").innerText = totalCount;
+    document.getElementById("exportButton").innerText = exportCount;
+    document.getElementById("collectButton").innerText = collectCount;
+    document.getElementById("noDataButton").innerText = noDataCount;
+    document.getElementById("packingButton").innerText = packingCount;
+    document.getElementById("packingNoDataButton").innerText = packingNoDataCount;
+}
 
-    function updateTotalCount() {
-        var barcodeInput = document.getElementById("barcodeInput").value.trim();
-        var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== "");
+function updateTotalCount() {
+    var barcodeInput = document.getElementById("barcodeInput").value.trim();
+    var barcodes = barcodeInput.split("\n").filter(barcode => barcode.trim() !== "");
 
-        var uniqueBarcodes = [];
+    var uniqueBarcodes = [];
 
-        barcodes.forEach(barcode => {
-            var trimmedBarcode = barcode.trim();
-            if (!uniqueBarcodes.includes(trimmedBarcode)) {
-                uniqueBarcodes.push(trimmedBarcode);
-            }
-        });
-
-        totalCount = uniqueBarcodes.length;
-
-        updateCountButtons();
-    }
-
-    function getCarrierName(barcode) {
-        if (barcode.startsWith('8')) {
-            return 'J&T Express';
-        } else if (barcode.startsWith('E')) {
-            return 'Vietnam Post';
-		} else if (barcode.startsWith('SPXVN')) {
-            return 'SPX Express';
-        } else if (barcode.startsWith('G')) {
-            return 'Giao Hàng Nhanh';
-        } else if (barcode.startsWith('NJVN')) {
-            return 'NinjaVan';
-        } else if (barcode.startsWith('LMP')) {
-            return 'Lazada';
-        }		else if (barcode.startsWith('1')) {
-            return 'GHTK';
-        } else {
-            return 'Unknown';
+    barcodes.forEach(barcode => {
+        var trimmedBarcode = barcode.trim();
+        if (!uniqueBarcodes.includes(trimmedBarcode)) {
+            uniqueBarcodes.push(trimmedBarcode);
         }
+    });
+
+    totalCount = uniqueBarcodes.length;
+
+    updateCountButtons();
+}
+
+function getCarrierName(barcode) {
+    if (barcode.startsWith('8')) {
+        return 'J&T Express';
+    } else if (barcode.startsWith('E')) {
+        return 'Vietnam Post';
+    } else if (barcode.startsWith('SPXVN')) {
+        return 'SPX Express';
+    } else if (barcode.startsWith('G')) {
+        return 'Giao Hàng Nhanh';
+    } else if (barcode.startsWith('NJVN')) {
+        return 'NinjaVan';
+    } else if (barcode.startsWith('LMP')) {
+        return 'Lazada';
+    } else if (barcode.startsWith('1')) {
+        return 'GHTK';
+    } else {
+        return 'Unknown';
     }
+}
 
-    async function getData() {
-        dataForExcel = [];
-        totalCount = 0;
-        exportCount = 0;
-        collectCount = 0;
-        noDataCount = 0;
-        packingCount = 0;
+async function getData() {
+    dataForExcel = [];
+    totalCount = 0;
+    exportCount = 0;
+    collectCount = 0;
+    noDataCount = 0;
+    packingCount = 0;
+    packingNoDataCount = 0;
 
-        var barcodes = document.getElementById("barcodeInput").value.split("\n").filter(barcode => barcode.trim() !== "");
+    var barcodes = document.getElementById("barcodeInput").value.split("\n").filter(barcode => barcode.trim() !== "");
 
-        var uniqueBarcodes = Array.from(new Set(barcodes));
+    var uniqueBarcodes = Array.from(new Set(barcodes));
 
-        var processedBarcodes = {};
+    var processedBarcodes = {};
 
-        var resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = "";
+    var resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "";
 
-        var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>Nhà Vận Chuyển</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th><th>Đóng Gói Lúc</th></tr></thead><tbody>";
+    var tableHTML = "<div class='table-responsive'><table class='table table-bordered'><thead class='thead-light'><tr><th>Nhà Vận Chuyển</th><th>Mã Vạch</th><th>Trạng Thái</th><th>Cập Nhật Lúc</th><th>Đóng Gói Lúc</th></tr></thead><tbody>";
 
-        var promises = uniqueBarcodes.map((barcode, index) => {
-            if (processedBarcodes[barcode]) {
-                return Promise.resolve();
-            }
+    var promises = uniqueBarcodes.map((barcode, index) => {
+        if (processedBarcodes[barcode]) {
+            return Promise.resolve();
+        }
 
-            var url = "https://crm.tdic-jsc.com/api/v1/warehouse/fulfillments?q=" + barcode;
+        var url = "https://crm.tdic-jsc.com/api/v1/warehouse/fulfillments?q=" + barcode;
 
-            return fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    var carrierName = getCarrierName(barcode);
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                var carrierName = getCarrierName(barcode);
 
-                    if (data.fulfillments.length > 0) {
-                        var lastFulfillment = data.fulfillments[data.fulfillments.length - 1];
-                        var scannerCode = formatScannerCode(lastFulfillment.scanner_code);
-                        var updatedAt = formatDateToGMT7(lastFulfillment.updated_at);
+                if (data.fulfillments.length > 0) {
+                    var lastFulfillment = data.fulfillments[data.fulfillments.length - 1];
+                    var scannerCode = formatScannerCode(lastFulfillment.scanner_code);
+                    var updatedAt = formatDateToGMT7(lastFulfillment.updated_at);
 
-                        var packingTime = "Không có dữ liệu";
-                        var packingFulfillment = data.fulfillments.find(fulfillment => fulfillment.scanner_code === "packing");
-                        if (packingFulfillment) {
-                            packingTime = formatDateToGMT7(packingFulfillment.updated_at);
-                            packingCount++;
-                        }
-
-                        tableHTML += "<tr><td style='font-weight: bold;'>" + carrierName + "</td><td style='font-weight: bold;'>" + barcode + "</td><td style='font-weight: bold;'>" + scannerCode + "</td><td style='font-weight: bold;'>" + updatedAt + "</td><td style='font-weight: bold;'>" + packingTime + "</td></tr>";
-
-                        dataForExcel.push([carrierName, barcode, scannerCode, updatedAt, packingTime]);
-
-                        totalCount++;
-                        if (lastFulfillment.scanner_code === "export") {
-                            exportCount++;
-                        } else if (lastFulfillment.scanner_code === "collect") {
-                            collectCount++;
-                        }
-
-                        processedBarcodes[barcode] = true;
-
-                        updateCountButtons();
+                    var packingTime = "Không có dữ liệu";
+                    var packingFulfillment = data.fulfillments.find(fulfillment => fulfillment.scanner_code === "packing");
+                    if (packingFulfillment) {
+                        packingTime = formatDateToGMT7(packingFulfillment.updated_at);
+                        packingCount++;
                     } else {
-                        tableHTML += "<tr><td>" + carrierName + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
-                        noDataCount++;
-
-                        dataForExcel.push([carrierName, barcode, "Không có dữ liệu", "Không có dữ liệu", "Không có dữ liệu"]);
-
-                        totalCount++;
-
-                        processedBarcodes[barcode] = true;
-
-                        updateCountButtons();
+                        packingNoDataCount++;
                     }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    resultDiv.innerHTML += "<div class='alert alert-danger' role='alert'>Đã xảy ra lỗi khi lấy dữ liệu từ API cho mã barcode " + barcode + ".</div>";
 
-                    noDataCount++;
+                    tableHTML += "<tr><td style='font-weight: bold;'>" + carrierName + "</td><td style='font-weight: bold;'>" + barcode + "</td><td style='font-weight: bold;'>" + scannerCode + "</td><td style='font-weight: bold;'>" + updatedAt + "</td><td style='font-weight: bold;'>" + packingTime + "</td></tr>";
+
+                    dataForExcel.push([carrierName, barcode, scannerCode, updatedAt, packingTime]);
+
+                    totalCount++;
+                    if (lastFulfillment.scanner_code === "export") {
+                        exportCount++;
+                    } else if (lastFulfillment.scanner_code === "collect") {
+                        collectCount++;
+                    }
+
+                    processedBarcodes[barcode] = true;
+
                     updateCountButtons();
-                });
-        });
+                } else {
+                    tableHTML += "<tr><td>" + carrierName + "</td><td>" + barcode + "</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td><td>Không có dữ liệu</td></tr>";
+                    noDataCount++;
 
-        Promise.all(promises)
-            .then(() => {
-                tableHTML += "</tbody></table></div>";
+                    dataForExcel.push([carrierName, barcode, "Không có dữ liệu", "Không có dữ liệu", "Không có dữ liệu"]);
 
-                resultDiv.innerHTML = tableHTML;
+                    totalCount++;
 
+                    processedBarcodes[barcode] = true;
+
+                    updateCountButtons();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                resultDiv.innerHTML += "<div class='alert alert-danger' role='alert'>Đã xảy ra lỗi khi lấy dữ liệu từ API cho mã barcode " + barcode + ".</div>";
+
+                noDataCount++;
                 updateCountButtons();
-
-                $('#infoModal').modal('show');
-                document.getElementById("totalModalText").innerText = totalCount;
-                document.getElementById("exportModalText").innerText = exportCount;
-                document.getElementById("collectModalText").innerText = collectCount;
-                document.getElementById("noDataModalText").innerText = noDataCount;
-                document.getElementById("packingModalText").innerText = packingCount;
-                $('#infoModal').modal('show');
             });
+    });
+
+    Promise.all(promises)
+        .then(() => {
+            tableHTML += "</tbody></table></div>";
+
+            resultDiv.innerHTML = tableHTML;
+
+            updateCountButtons();
+
+            $('#infoModal').modal('show');
+            document.getElementById("totalModalText").innerText = totalCount;
+            document.getElementById("exportModalText").innerText = exportCount;
+            document.getElementById("collectModalText").innerText = collectCount;
+            document.getElementById("noDataModalText").innerText = noDataCount;
+            document.getElementById("packingModalText").innerText = packingCount;
+            document.getElementById("packingNoDataModalText").innerText = packingNoDataCount;
+            $('#infoModal').modal('show');
+        });
+}
+
+function removeDuplicates(array) {
+    return [...new Set(array)];
+}
+
+function formatScannerCode(code) {
+    if (code === "export") {
+        return "Đã giao cho ĐVVC";
+    } else if (code === "collect") {
+        return "Đã gom đơn";
+    } else if (code === "packing") {
+        return "Đóng Gói";
+    } else {
+        return "Không có dữ liệu";
     }
+}
 
-    function removeDuplicates(array) {
-        return [...new Set(array)];
-    }
+function formatDateToGMT7(dateString) {
+    var date = new Date(dateString);
+    var offset = 7 * 60;
+    date.setMinutes(date.getMinutes() + offset);
 
-    function formatScannerCode(code) {
-        if (code === "export") {
-            return "Đã giao cho ĐVVC";
-        } else if (code === "collect") {
-            return "Đã gom đơn";
-        } else if (code === "packing") {
-            return "Đóng Gói";
-        } else {
-            return "Không có dữ liệu";
-        }
-    }
+    var hours = date.getUTCHours().toString().padStart(2, '0');
+    var minutes = date.getUTCMinutes().toString().padStart(2, '0');
+    var day = date.getUTCDate().toString().padStart(2, '0');
+    var month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+    var year = date.getUTCFullYear();
 
-    function formatDateToGMT7(dateString) {
-        var date = new Date(dateString);
-        var offset = 7 * 60;
-        date.setMinutes(date.getMinutes() + offset);
+    return `${hours}:${minutes} ${day}/${month}/${year}`;
+}
 
-        var hours = date.getUTCHours().toString().padStart(2, '0');
-        var minutes = date.getUTCMinutes().toString().padStart(2, '0');
-        var day = date.getUTCDate().toString().padStart(2, '0');
-        var month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
-        var year = date.getUTCFullYear();
+function exportToExcel() {
+    var wb = XLSX.utils.book_new();
+    wb.Props = {
+        Title: "Check Gom Xuat",
+        Subject: "Check Gom Xuat",
+        Author: "YangJiii",
+        CreatedDate: new Date()
+    };
+    wb.SheetNames.push("Data");
+    var ws_data = [['Nhà Vận Chuyển', 'Mã Vạch', 'Trạng Thái', 'Cập Nhật Lúc', 'Đóng Gói Lúc'], ...dataForExcel];
+    var ws = XLSX.utils.aoa_to_sheet(ws_data);
+    wb.Sheets["Data"] = ws;
+    var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
+    saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'CheckGomXuat.xlsx');
+}
 
-        return `${hours}:${minutes} ${day}/${month}/${year}`;
-    }
+function s2ab(s) {
+    var buf = new ArrayBuffer(s.length);
+    var view = new Uint8Array(buf);
+    for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+    return buf;
+}
 
-    function exportToExcel() {
-        var wb = XLSX.utils.book_new();
-        wb.Props = {
-            Title: "Check Gom Xuat",
-            Subject: "Check Gom Xuat",
-            Author: "YangJiii",
-            CreatedDate: new Date()
-        };
-        wb.SheetNames.push("Data");
-        var ws_data = [['Nhà Vận Chuyển', 'Mã Vạch', 'Trạng Thái', 'Cập Nhật Lúc', 'Đóng Gói Lúc'], ...dataForExcel];
-        var ws = XLSX.utils.aoa_to_sheet(ws_data);
-        wb.Sheets["Data"] = ws;
-        var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
-        saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'CheckGomXuat.xlsx');
-    }
+function importFromTxt(input) {
+    var file = input.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var contents = e.target.result;
+        document.getElementById("barcodeInput").value = contents;
+    };
+    reader.readAsText(file);
+}
 
-    function s2ab(s) {
-        var buf = new ArrayBuffer(s.length);
-        var view = new Uint8Array(buf);
-        for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-        return buf;
-    }
-
-    function importFromTxt(input) {
-        var file = input.files[0];
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            var contents = e.target.result;
-            document.getElementById("barcodeInput").value = contents;
-        };
-        reader.readAsText(file);
-    }
 </script>
     <script>
         function updateTime() {
