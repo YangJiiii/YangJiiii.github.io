@@ -1,0 +1,393 @@
+Package: com.afnanahmad.chromahomebarx
+Version: 0.4
+Architecture: iphoneos-arm64
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 642
+Depends: firmware(>= 11.0), mobilesubstrate, preferenceloader, org.thebigboss.libcolorpicker
+Filename: ./debs/com.afnanahmad.chromahomebarx_0.4_iphoneos-arm64.deb
+Size: 119498
+MD5sum: c9e5bf0215a9d79308b24198372d49f0
+SHA1: 232aea6435e88450e444dca2b9cbf4dca1b1c159
+SHA256: fd76b34e323158418a626ae61134f67b5ad7a7df58aa7d6fcb8cbbd1432f9ef3
+Section: Tweaks
+Priority: optional
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=chromahomebarxDp
+Description: Razer Chroma insprird HomeBar coloring tweak for iPhone X, also works with LittleX.
+Tag: purpose::extension, compatible::ios11, compatible::ios12
+Author: Afnan Ahmad <afnanahmaddd@gmail.com>
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=chromahomebarxDp
+Dev: afnanahmad
+Icon: file:///Library/PreferenceBundles/ChromaHomeBarX.bundle/chroma@2x.png
+Name: ChromaHomeBarX
+Sponsor: thebigboss.org <http://thebigboss.org>
+
+Package: com.ikilledappl3.autofolderclose-rootless
+Version: 1.1
+Architecture: iphoneos-arm64
+Maintainer: michaelmelita1
+Installed-Size: 168
+Depends: mobilesubstrate, firmware (>= 15.0)
+Filename: ./debs/com.ikilledappl3.autofolderclose_1.1_iphoneos-arm64.deb
+Size: 3302
+MD5sum: 8fe5ac45af861cb328f7f06e3c269827
+SHA1: ae5d3478b667b1fefbd86aec25d726640c21c43a
+SHA256: 43848a0646ec5cc2a0a71bb5be9d4bae5fb3e009d618c54a4919951e7c8efe0a
+Section: Tweaks
+Description: Closes your folder when you launch an application.
+Author: iKilledAppl3
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.ikilledappl3.autofolderclose
+Name: AutoFolderClose
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.ikilledappl3.autofolderclose/info.json
+
+Package: com.michaelmelita1.11cam14
+Version: 0.0.11
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Installed-Size: 88
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/com.michaelmelita1.11cam14_0.0.11_iphoneos-arm.deb
+Size: 3966
+MD5sum: 3e958b7823f3fd204b396cb2319ec50a
+SHA1: 3b97eb24defe0762f2b607259e48f6146cbb307d
+SHA256: ba6b426e9be0e07bbe664d7fdb03ed076c1eb67e1e7e3c6634072fba9aa023ff
+Section: Tweaks
+Description: iPhone 11 Camera
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.11cam14
+Name: 11Cam14
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.11cam14/info.json
+
+Package: com.michaelmelita1.11cam15-rootless
+Version: 0.0.17
+Architecture: iphoneos-arm64
+Maintainer: Michael Melita
+Installed-Size: 88
+Depends: mobilesubstrate, firmware (>>15.0)
+Filename: ./debs/com.michaelmelita1.11cam15_0.0.17_iphoneos-arm64.deb
+Size: 3106
+MD5sum: da4142b2f66de6d0813897e5480fd974
+SHA1: 5172ee7fe17a270a9a7e907ba8da21d9c68c2110
+SHA256: cba3773082f437e94cb266ee119bc95e7856ebe2beab77192c3b0a368ecccbf4
+Section: Tweaks
+Description: New Camera app for iOS 15 & 16
+Author: Michael Melita, Flylarb & Ezekiel1998
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.11cam15
+Name: 11Cam15
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.11cam15/info.json
+
+Package: com.michaelmelita1.betterpad12
+Version: 0.0.4
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Installed-Size: 192
+Depends: mobilesubstrate, firmware (<= 12.7), cy+model.ipad (= 4.1) | cy+model.ipad (= 4.2) | cy+model.ipad (= 4.3) | cy+model.ipad (= 4.4)| cy+model.ipad (= 4.5) | cy+model.ipad (= 4.6) | cy+model.ipad (= 4.7) | cy+model.ipad (= 4.8) | cy+model.ipad (= 4.9)
+Conflicts: com.michaelmelita1.iris12, com.michaelmelita1.medusa12, com.michaelmelita1.campad12
+Filename: ./debs/com.michaelmelita1.betterpad12_0.0.4_iphoneos-arm.deb
+Size: 3450
+MD5sum: e63bd81e89a317860c42e82b4ae3784c
+SHA1: 64af9f3b5ce065bff4e439ac692dc85012762294
+SHA256: cc7936dafda5132308638a88e3f611ad7bf7bbfc45dafef271a2e9baa212af58
+Section: Tweaks
+Description: Enhance your iOS 12 iPad
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.betterpad12
+Name: BetterPad12
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.betterpad12/info.json
+
+Package: com.michaelmelita1.betterpad14
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Installed-Size: 176
+Depends: mobilesubstrate, firmware (>= 14.0), cy+model.ipad (= 5.1) | cy+model.ipad (= 5.2) | cy+model.ipad (= 5.3) | cy+model.ipad (= 5.4)
+Filename: ./debs/com.michaelmelita1.betterpad14_0.0.1_iphoneos-arm.deb
+Size: 3282
+MD5sum: e4a81baabe0cdad7bed5d0896d5f0c14
+SHA1: 255fd29dfd9045edb47df37418c75e3b9c508f50
+SHA256: 48502de589c7b1a0d01d20205a872de7a794361ae1194d69d9e0292eeef4d213
+Section: Tweaks
+Description: Enhance your iPad Air 2/iPad Mini 4
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.betterpad14
+Name: BetterPad14
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.betterpad14/info.json
+
+Package: com.michaelmelita1.detectedtext
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Installed-Size: 104
+Depends: mobilesubstrate, firmware (>= 15.0), gsc.ipad
+Filename: ./debs/com.michaelmelita1.detectedtext_0.0.2_iphoneos-arm.deb
+Size: 2438
+MD5sum: 2f5b1b0fe52911c3fcebc6ff0e97d377
+SHA1: cb65b22aefb2cc4db220c5a520ae2c57472eeb05
+SHA256: 4cbb404418a3244d03993a4a1f7e3c139e29de622c3740da651e38006700160c
+Section: Tweaks
+Description: Live Text in the Camera App
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.detectedtext
+Name: DetectedText
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.detectedtext/info.json
+
+Package: com.michaelmelita1.detectedtext-rootless
+Version: 0.0.2
+Architecture: iphoneos-arm64
+Maintainer: Michael Melita
+Installed-Size: 88
+Depends: mobilesubstrate, firmware (>= 15.0), gsc.ipad
+Filename: ./debs/com.michaelmelita1.detectedtext_0.0.2_iphoneos-arm64.deb
+Size: 2426
+MD5sum: 96319e4fd287edc3d98158861efa224a
+SHA1: 6a7d4bbb6c393a67995a93111a538d8736669e8b
+SHA256: 70d84167152297ba287238c8ae4246cd6c233cdf98e9ff8edc612d99713730ea
+Section: Tweaks
+Description: Live Text in the Camera App
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.detectedtext
+Name: DetectedText
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.detectedtext/info.json
+
+Package: com.michaelmelita1.frontcammirror
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Installed-Size: 88
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/com.michaelmelita1.frontcammirror_0.0.1_iphoneos-arm.deb
+Size: 2378
+MD5sum: a4794e337878aa2754e45969d7d8243f
+SHA1: e50f3573146d7d3aea4f4b89a15bd6d443cee785
+SHA256: 2ed0562ec9671196d2621df50fdab34e577d2f5cfcbc638979c250a666400564
+Section: Tweaks
+Description: Mirror the front camera
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.frontcammirror
+Name: FrontCamMirror
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.frontcammirror/info.json
+
+Package: com.michaelmelita1.fxxkhaptictouch
+Version: 0.0.1
+Architecture: iphoneos-arm64
+Maintainer: Michael Melita
+Installed-Size: 168
+Depends: mobilesubstrate
+Filename: ./debs/com.michaelmelita1.fxxkhaptictouch_0.0.1_iphoneos-arm64.deb
+Size: 2908
+MD5sum: c1a41fb035e935da344828cdd3eb05b5
+SHA1: ab9bccff84dd45873aff261841125a50a6f33799
+SHA256: 916b16f91851cc552d6ca137f2bed2bc942c951c9835f766ccd8de3442933308
+Section: Tweaks
+Description: Disable HapticTouch
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.fxxkhaptictouch
+Name: FxxkHapticTouch
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.fxxkhaptictouch/info.json
+
+Package: com.michaelmelita1.iris12
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Installed-Size: 88
+Depends: mobilesubstrate, firmware (>= 11.0)
+Filename: ./debs/com.michaelmelita1.iris12_0.0.2_iphoneos-arm.deb
+Size: 2468
+MD5sum: a703d1b007bd8dac01338a4d54b225da
+SHA1: 630c0d317f33744de64721588a6931c124cb4318
+SHA256: afcbd6936c732eba284fffc22fc6ce1f552e1c8a678bda53b5b05c44c1904282
+Section: Tweaks
+Description: Enable Live Photos on Unsupported iOS Devices
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.iris12
+Name: Iris
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.iris12/info.json
+
+Package: com.michaelmelita1.lowgraphics
+Version: 0.0.3
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Depends: mobilesubstrate
+Filename: ./debs/com.michaelmelita1.lowgraphics_0.0.3_iphoneos-arm.deb
+Size: 2612
+MD5sum: 2df16656e0fd9865071ed46c02579588
+SHA1: d48b20648d9248cecb89f61425b40a246ad74a7d
+SHA256: be7f83f82533dea2de194abd78c70df2ac1799c951bb5a0d16392f8c46de36f7
+Section: Tweaks
+Description: Replaces Blurs with Transparency Systemwide
+Author: Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.lowgraphics
+Name: LowGraphics
+
+Package: com.michaelmelita1.tapticcentre
+Version: 0.1.1
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Installed-Size: 88
+Depends: mobilesubstrate
+Filename: ./debs/com.michaelmelita1.tapticcentre_0.1.1_iphoneos-arm.deb
+Size: 2224
+MD5sum: 67ba16d9623779c4c70c1f4e4bcfbaa0
+SHA1: 0b55e4809c76743e40c45654e62ff96c477198c8
+SHA256: 0106cb0de330272363512345290a0cfb3e512d27c949a52278068e45ed5a6ef4
+Section: Tweaks
+Description: Taptic Feedback when opening Control Centre
+Author: Michael Melita
+Name: TapticCentre
+
+Package: com.michaelmelita1.tapticcentre-rootless
+Version: 0.1.1
+Architecture: iphoneos-arm64
+Maintainer: Michael Melita
+Installed-Size: 88
+Depends: mobilesubstrate
+Filename: ./debs/com.michaelmelita1.tapticcentre_0.1.1_iphoneos-arm64.deb
+Size: 2548
+MD5sum: c919c286323f04c8e80b79b85fba5f15
+SHA1: 530f80d6c6e06b4a52ba76db6a6a2bbd95f44af3
+SHA256: 0a048d88fb9aac8180e53531b82a7a2342d2be7fc86f24c2d5423e57cc9746ce
+Section: Tweaks
+Description: Taptic Feedback when opening Control Centre
+Author: Michael Melita
+Name: TapticCentre
+
+Package: com.michaelmelita1.widebydefault
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: Michael Melita
+Installed-Size: 104
+Depends: mobilesubstrate
+Filename: ./debs/com.michaelmelita1.widebydefault_0.0.2_iphoneos-arm.deb
+Size: 2450
+MD5sum: fcec5986812c1d417333e59e0437b261
+SHA1: f14629ab7d2bc114d17a7d427fa9e5d42d552864
+SHA256: 413de38c25487d8e643d620e0f7f592753d1ca0604f935c18fe79342fb4dfaeb
+Section: Tweaks
+Description: Default to the Wide selfie camera on 11Pro
+Author: LaVie and Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.widebydefault
+Name: WidebyDefault
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.widebydefault/info.json
+
+Package: com.michaelmelita1.widebydefault-rootless
+Version: 0.0.2
+Architecture: iphoneos-arm64
+Maintainer: Michael Melita
+Installed-Size: 88
+Depends: mobilesubstrate
+Filename: ./debs/com.michaelmelita1.widebydefault_0.0.2_iphoneos-arm64.deb
+Size: 2544
+MD5sum: 73b3cf5c8974f5d28493da5027af182a
+SHA1: 07a0688faef39259760c3633c6300f1e1cdc9ac4
+SHA256: 380f5c84e4f5d59774bf1850438477ee8498ba83ed2a12353b2cac7c157909dc
+Section: Tweaks
+Description: Default to the Wide selfie camera on 11Pro
+Author: LaVie and Michael Melita
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.widebydefault
+Name: WidebyDefault
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.widebydefault/info.json
+
+Package: com.pookjw.actionbuttonenabler
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Maintainer: pookjw
+Installed-Size: 4168
+Depends: firmware (>= 17.0)
+Filename: ./debs/com.pookjw.actionbuttonenabler_1.0.1_iphoneos-arm64.deb
+Size: 3648802
+MD5sum: 0f6cb4aaf90af46e52539f08dfb42803
+SHA1: 783efa986a47c89221be8f12d530751bfa4f9301
+SHA256: 7ceb49d61de3bcee5f0884334cd78d5f14455fec0d0b00c1b0d3a3798f67f003
+Section: Tweaks
+Description: Enable Action Button on all devices!
+Author: pookjw
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.pookjw.actionbuttonenabler
+Name: ActionButtonEnabler
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.pookjw.actionbuttonenabler/info.json
+
+Package: com.pookjw.animatedsfsymbol
+Version: 1.0-19+debug
+Architecture: iphoneos-arm64
+Maintainer: pookjw
+Installed-Size: 172
+Depends: firmware (>= 17.0)
+Filename: ./debs/com.pookjw.animatedsfsymbol_1.0-19+debug_iphoneos-arm64.deb
+Size: 5136
+MD5sum: 2f078d737425a1b61ad8bdf8509e8046
+SHA1: 995d891be0377fcd1c76c4c96897602da8509c9a
+SHA256: 1b2f417ac847f3c695d748955d9ee0bf866acc3f47bb296f9c931916535ab7bd
+Section: Tweaks
+Description: Hello World!
+Author: pookjw
+Name: AnimatedSFSymbol
+
+Package: com.pookjw.standpad
+Version: 1.0
+Architecture: iphoneos-arm64
+Maintainer: pookjw
+Installed-Size: 508
+Depends: firmware (>= 17.0)
+Filename: ./debs/com.pookjw.standpad_1.0_iphoneos-arm64.deb
+Size: 9674
+MD5sum: bf2df122f6fbb70c6eb6913615cc19e4
+SHA1: b4037d2020cbae30cceeabca305afc28965eff32
+SHA256: 0d29950a013e7be65502e68f72c96b6d16fe9954a6161864e4c11ba10a40129a
+Section: Tweaks
+Description: Enable StandBy feature on iPadOS
+Author: pookjw
+Depiction: https://michaelmelita1.github.io/depictions/?p=com.pookjw.standpad
+Name: StandPad
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.pookjw.standpad/info.json
+
+Package: com.ps.highweather
+Version: 1.0.0-1+debug
+Architecture: iphoneos-arm
+Maintainer: PoomSmart
+Installed-Size: 72
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 15.0)
+Filename: ./debs/com.ps.highweather_1.0.0-1+debug_iphoneos-arm.deb
+Size: 2770
+MD5sum: 7c7645e16c160fa60ff611d52cf45c6b
+SHA1: f9037ef488a1fd80b56b35e7752e939be6e08733
+SHA256: 0ef364c497c57efe96b8af1a258b26e2bc0dfeaf5ff0446af9ecb52ce7958e9c
+Section: Tweaks
+Description: Best graphics for iOS 15 Weather app
+Author: PoomSmart
+Name: HighWeather
+
+Package: com.ps.highweather
+Version: 1.0.0-2+debug
+Architecture: iphoneos-arm64
+Maintainer: PoomSmart
+Installed-Size: 72
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 15.0)
+Filename: ./debs/com.ps.highweather_1.0.0-2+debug_iphoneos-arm64.deb
+Size: 2830
+MD5sum: 6e43a436cb06e87ce5aace9f7439d8d0
+SHA1: 1f6d1c1144649cf732ff5ef52efeee6bd596316d
+SHA256: 8566ebb1c02b2cedb46253fc3fc3bf2d8d514bdeb1c8a548b7a54d89f19e9f12
+Section: Tweaks
+Description: Best graphics for iOS 15 Weather app
+Author: PoomSmart
+Name: HighWeather
+
+Package: com.tomaszpoliszuk.lockscreenbatterymagsafe
+Version: 1.0.4
+Architecture: iphoneos-arm64
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 168
+Depends: firmware (>= 14.1), mobilesubstrate
+Filename: ./debs/com.tomaszpoliszuk.lockscreenbatterymagsafe_1.0.4_iphoneos-arm64.deb
+Size: 4550
+MD5sum: 24e3342d8bcbef5ec8dec97740c4cf7a
+SHA1: 5a7af79cec3ea15c8f7b5ce907cc24fd80746a23
+SHA256: e7ad57e95f3312ad05d88849e44eec5ccd2dbd9d2f0b6c46a8908063905353b6
+Section: Tweaks
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=lockscreenbatterymagsafeDp
+Description: Enable new native MagSafe charging view on lockscreen when connecting device to power source
+Tag: purpose::extension
+Author: Tomasz Poliszuk
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=lockscreenbatterymagsafeDp
+Dev: tomaszpoliszuk
+Name: MagSafe Enabler
+Sponsor: thebigboss.org <http://thebigboss.org>
+

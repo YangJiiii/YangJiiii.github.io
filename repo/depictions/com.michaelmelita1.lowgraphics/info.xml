@@ -1,0 +1,25 @@
+<package>
+	<id>com.michaelmelita1.lowgraphics</id>
+	<name>LowGraphics</name>
+	<version>0.0.1</version>
+	<compatibility>
+		<firmware>
+			<miniOS>9.X</miniOS>
+		</firmware>
+	</compatibility>
+	<shortDescription>Speed up your iOS 9 Device</shortDescription>
+	<descriptionlist>
+		<description>Forces Opacity Effects instead of Blur on low end devices on iOS 9</description>
+	</descriptionlist>
+	<screenshots>
+		<screenshot>
+			<image>1.jpg</image>
+		</screenshot>	
+		<screenshot>
+			<image>2.jpg</image>
+		</screenshot>	
+	</screenshots>
+	<changelog>
+		<change>Initial Release</change>
+	</changelog>
+</package>

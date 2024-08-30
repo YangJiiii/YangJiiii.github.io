@@ -1,0 +1,74 @@
+{
+    "tabs": [
+        {
+            "class": "DepictionStackView",
+            "views": [
+                {
+                    "class": "DepictionMarkdownView",
+                    "markdown": "Disable Haptic Touch on Rootless Jailbreaks",
+                    "useSpacing": true
+                },
+                {
+                    "markdown": "Compatible with iPhone 6S to XS on rootless jailbreaks",
+                    "class": "DepictionMarkdownView",
+                    "title": "markdown-description",
+                    "useBoldText": true,
+                    "useBottomMargin": false
+                },
+                {
+                    "class": "DepictionSeparatorView"
+                },
+                {
+                    "text": "0.0.1",
+                    "class": "DepictionTableTextView",
+                    "title": "Version"
+                },
+                {
+                    "text": "10-01-2024",
+                    "class": "DepictionTableTextView",
+                    "title": "Last Updated"
+                },
+                {
+                    "text": "Free",
+                    "class": "DepictionTableTextView",
+                    "title": "Price"
+                },
+                {
+                    "spacing": 8,
+                    "class": "DepictionSpacerView"
+                },
+                {
+                    "text": "Michael Melita",
+                    "class": "DepictionTableTextView",
+                    "title": "Developer"
+                },
+                {
+                    "spacing": 8,
+                    "class": "DepictionSpacerView"
+                }
+            ],
+            "tabname": "Details"
+        },
+        {
+			"tabname": "Changelog",
+			"views": [
+				{
+					"title": "0.0.1",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Initial Release",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				},
+			],
+			"class": "DepictionStackView"
+		}
+    ],
+    "minVersion": "0.1",
+    "class": "DepictionTabView",
+    "headerImage": "https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.fxxkhaptictouch/1.jpeg",
+    "tintColor": "#0657bb"
+}

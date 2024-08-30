@@ -1,0 +1,14 @@
+<changelog>
+	<changes>
+		<version>0.0.16</version>
+		<change>Enabled Live Text, new camera font and QuickTake Zoom</change>
+	</changes>
+	<changes>
+		<version>0.0.15</version>
+		<change>Added iPhone 11 Exposure Slider</change>
+	</changes>
+	<changes>
+		<version>0.0.14</version>
+		<change>Updated for iOS 15. Enabled iPhone 13 Zoom Plater</change>
+	</changes>
+</changelog>

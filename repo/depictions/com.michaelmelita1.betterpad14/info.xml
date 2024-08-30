@@ -1,0 +1,17 @@
+<package>
+	<id>com.michaelmelita1.betterpad12</id>
+	<name>BetterPad14</name>
+	<version>0.0.1</version>
+	<compatibility>
+		<firmware>
+			<miniOS>14.X</miniOS>
+		</firmware>
+	</compatibility>
+	<shortDescription>Enhance your iOS 14 iPad</shortDescription>
+	<descriptionlist>
+		<description>Enable Live Photos, Interactive Siri and Full Multitasking. Compatible with iPad Air 2 and iPad Mini 4</description>
+	</descriptionlist>
+	<changelog>
+		<change>Initial Release</change>
+	</changelog>
+</package>

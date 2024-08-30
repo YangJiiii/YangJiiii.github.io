@@ -1,0 +1,17 @@
+<package>
+	<id>com.michaelmelita1.tapticcentre</id>
+	<name>Taptic Centre</name>
+	<version>0.1.1</version>
+	<compatibility>
+		<firmware>
+			<miniOS>13.0</miniOS>
+		</firmware>
+	</compatibility>
+	<shortDescription>Taptic Feedback when opening control centre</shortDescription>
+	<descriptionlist>
+		<description>Taptic Feedback when opening control centre</description>		
+	</descriptionlist>
+	<changelog>
+		<change>Minor Internal Changes</change>
+	</changelog>
+</package>

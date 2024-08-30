@@ -1,0 +1,10 @@
+<changelog>
+	<changes>
+		<version>0.1.1</version>
+		<change>Minor Internal Changes</change>
+	</changes>
+	<changes>
+		<version>0.0.9-5</version>
+		<change>Increased Stock App loading speed</change>
+	</changes>
+</changelog>

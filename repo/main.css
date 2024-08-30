@@ -1,0 +1,195 @@
+html {
+    font-family:-apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding:0
+}
+
+section:not(:first-child) {
+    margin-top:2%
+}
+
+section:last-child {
+    margin-bottom:10px
+}
+
+header {
+    background-color: #f6f6f6;
+    text-align: left;
+    padding: 5rem;
+    padding-left: 20%;
+    padding-right:20%
+}
+
+header img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 100%;
+    float:right
+}
+
+.links {
+    margin-top:2rem
+}
+
+.title {
+    font-size: 3rem;
+    font-weight:500
+}
+
+.subtitle {
+    opacity: .7;
+    font-size:1.2rem
+}
+
+p {
+    margin:1%
+}
+
+.button {
+    background-color: #111;
+    color: #fff;
+    margin-left: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    text-decoration:none
+}
+
+.button i, .button svg {
+    margin-right:2px
+}
+
+.button svg {
+    margin-bottom: -3px;
+    width: 1rem;
+    height:1rem
+}
+
+a.twitter {
+    background-color: #4299e11a;
+    color:#4299e1
+}
+
+a.github {
+    background-color: rgba(54, 54, 54, .1);
+    color:#363636
+}
+
+a.repo {
+    background-color: #42c9e11a;
+    color:#2cb1be
+}
+featured.body {
+    max-width: 1000px;
+    padding: 3rem;
+    margin:auto
+}
+section.body {
+    max-width: 1000px;
+    padding: 3rem;
+    margin:auto
+}
+
+.cards {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns:repeat(3, 1fr)
+}
+
+.card {
+    position: relative;
+    display: block;
+    background-color: #f6f6f6;
+    color: #000;
+    border-radius: .5rem;
+    width: 320px;
+    height: 270px;
+    overflow: hidden;
+    text-decoration: none;
+    padding-bottom:1rem
+}
+
+.card img.card-icon {
+    position: absolute;
+    width: 320px;
+    height: 175px;
+    top: -5px;
+    left: 50%;
+    margin-left: -160px;
+    border-radius:0px
+}
+
+.card p {
+    padding-left: 1rem;
+    padding-right:1rem
+}
+
+.card .card-category {
+    padding-top: .5rem;
+    opacity: .6;
+    font-size:.8rem
+}
+
+.card .card-title {
+    padding-top: .2rem;
+    font-size: 1.2rem;
+    font-weight:500
+}
+
+.card .card-text {
+    padding-top: .2rem;
+    opacity:.7
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        text-align: center;
+        padding: 3rem;
+        padding-left: 10px;
+        padding-right:10px
+    }
+
+    header img {
+        float:none
+    }
+
+    section.body {
+        padding: 1rem;
+        padding-top:3rem
+    }
+
+    .cards {
+        grid-template-columns:repeat(1, 1fr)
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        color:#fff
+    }
+
+    header {
+        background-color: #191926
+    }
+
+    .button {
+        background-color: #111;
+        color:#fff
+    }
+
+    a.github {
+        background-color: #cacaca1a;
+        color:#cacaca
+    }
+
+    .card {
+        background-color: #111;
+        color: #fff
+    }
+}
+

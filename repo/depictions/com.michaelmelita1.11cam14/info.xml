@@ -1,0 +1,26 @@
+<package>
+	<id>com.michaelmelita1.11cam14</id>
+	<name>11Cam14</name>
+	<version>0.0.11</version>
+	<compatibility>
+		<firmware>
+			<miniOS>14.0</miniOS>
+		</firmware>
+	</compatibility>
+	<shortDescription>iPhone 11 Camera App for older phones</shortDescription>
+	<descriptionlist>
+		<description>11Cam adds the iPhone 11 Camera App to your iPhone</description>
+		<description>Compatible with iPhone SE - iPhone X on iOS 14</description>		
+	</descriptionlist>
+	<screenshots>
+		<screenshot>
+			<image>1.PNG</image>
+		</screenshot>	
+		<screenshot>
+			<image>2.PNG</image>
+		</screenshot>	
+	</screenshots>
+	<changelog>
+		<change>Fixed Portrait Effects on iPhone 7 Plus. Added Auto Live Photo Feature and AutoHDR. Enabled Camera System Wide.</change>
+	</changelog>
+</package>

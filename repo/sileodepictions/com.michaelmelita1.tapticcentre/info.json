@@ -1,0 +1,86 @@
+{
+    "tabs": [
+        {
+            "class": "DepictionStackView",
+            "views": [
+                {
+                    "class": "DepictionMarkdownView",
+                    "markdown": "Taptic Feedback when opening Control Centre",
+                    "useSpacing": true
+                },
+                {
+                    "markdown": " Compatible with iPhone 6S - X running iOS 13",
+                    "class": "DepictionMarkdownView",
+                    "title": "markdown-description",
+                    "useBoldText": true,
+                    "useBottomMargin": false
+                },
+                {
+                    "class": "DepictionSeparatorView"
+                },
+                {
+                    "text": "0.1.1",
+                    "class": "DepictionTableTextView",
+                    "title": "Version"
+                },
+                {
+                    "text": "06-17-2020",
+                    "class": "DepictionTableTextView",
+                    "title": "Released"
+                },
+                {
+                    "text": "Free",
+                    "class": "DepictionTableTextView",
+                    "title": "Price"
+                },
+                {
+                    "spacing": 8,
+                    "class": "DepictionSpacerView"
+                },
+                {
+                    "text": "Michael Melita",
+                    "class": "DepictionTableTextView",
+                    "title": "Developer"
+                },
+                {
+                    "spacing": 8,
+                    "class": "DepictionSpacerView"
+                }
+            ],
+            "tabname": "Details"
+        },
+        {
+			"tabname": "Changelog",
+			"views": [
+
+				{
+					"title": "0.1.1",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Minor Internal Changes",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				},				
+				{
+					"title": "0.0.9-5",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Increased Stock App loading speed",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				}
+                ],
+			"class": "DepictionStackView"
+		}
+    ],
+    "minVersion": "0.1",
+    "class": "DepictionTabView",
+    "headerImage": "https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.tapticcentre/Banner.png",
+    "tintColor": "#0657bb"
+}

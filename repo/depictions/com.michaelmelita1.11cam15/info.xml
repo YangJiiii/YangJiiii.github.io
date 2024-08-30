@@ -1,0 +1,26 @@
+<package>
+	<id>com.michaelmelita1.11cam15</id>
+	<name>11Cam15</name>
+	<version>0.0.16</version>
+	<compatibility>
+		<firmware>
+			<miniOS>15.0</miniOS>
+		</firmware>
+	</compatibility>
+	<shortDescription>iPhone 11 Camera App for older phones</shortDescription>
+	<descriptionlist>
+		<description>11Cam adds the iPhone 11 Camera App to your iPhone</description>
+		<description>Compatible with iPhone SE - iPhone X on iOS 15</description>		
+	</descriptionlist>
+	<screenshots>
+		<screenshot>
+			<image>1.PNG</image>
+		</screenshot>	
+		<screenshot>
+			<image>2.PNG</image>
+		</screenshot>	
+	</screenshots>
+	<changelog>
+		<change>Enabled Live Text, new camera font and QuickTake Zoom</change>
+	</changelog>
+</package>

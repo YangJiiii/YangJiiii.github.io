@@ -1,0 +1,17 @@
+<package>
+	<id>com.michaelmelita1.iris12</id>
+	<name>Iris12</name>
+	<version>0.0.1</version>
+	<compatibility>
+		<firmware>
+			<miniOS>12.X</miniOS>
+		</firmware>
+	</compatibility>
+	<shortDescription>Enable Live Photos on A7 and A8 Devices</shortDescription>
+	<descriptionlist>
+		<description>Enable Live Photos on iPhone 5S, 6, iPod Touch 6, iPad Air and Mini 2</description>
+	</descriptionlist>
+	<changelog>
+		<change>Initial Release</change>
+	</changelog>
+</package>

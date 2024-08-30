@@ -1,0 +1,122 @@
+{
+    "tabs": [
+        {
+            "class": "DepictionStackView",
+            "views": [
+                {
+                    "class": "DepictionMarkdownView",
+                    "markdown": "11Cam15 adds the iPhone 11 Camera App to your iPhone",
+                    "useSpacing": true
+                },
+                {
+                    "class": "DepictionScreenshotsView",
+                    "screenshots": [
+                        {
+                            "accessibilityText": "Screenshot0",
+                            "url": "https://michaelmelita1.github.io/depictions/com.michaelmelita1.11cam15/screenshots/1.PNG"
+                        },
+                        {
+                            "accessibilityText": "Screenshot1",
+                            "url": "https://michaelmelita1.github.io/depictions/com.michaelmelita1.11cam15/screenshots/2.PNG"
+                        }
+                    ],
+                    "itemSize": "{160, 275.41333333333336}",
+                    "itemCornerRadius": 6
+                },
+                {
+                    "markdown": "Compatible with iPhone SE - X running iOS 15",
+                    "class": "DepictionMarkdownView",
+                    "title": "markdown-description",
+                    "useBoldText": true,
+                    "useBottomMargin": false
+                },
+                {
+                    "class": "DepictionSeparatorView"
+                },
+                {
+                    "text": "0.0.17",
+                    "class": "DepictionTableTextView",
+                    "title": "Version"
+                },
+                {
+                    "text": "01-04-2023",
+                    "class": "DepictionTableTextView",
+                    "title": "Last Updated"
+                },
+                {
+                    "text": "Free",
+                    "class": "DepictionTableTextView",
+                    "title": "Price"
+                },
+                {
+                    "spacing": 8,
+                    "class": "DepictionSpacerView"
+                },
+                {
+                    "text": "Michael Melita, Flylarb & Ezekiel1998",
+                    "class": "DepictionTableTextView",
+                    "title": "Developer"
+                },
+                {
+                    "spacing": 8,
+                    "class": "DepictionSpacerView"
+                }
+            ],
+            "tabname": "Details"
+        },
+        {
+			"tabname": "Changelog",
+			"views": [
+				{				
+					"title": "0.0.17",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Fixed HD Video on iPhone 6S, SE and 7. Added See Outside the Frame support for Dual Camera Devices (ROOTFUL ONLY)",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				},
+				{
+					"title": "0.0.16",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Enabled Live Text, new camera font and QuickTake Zoom",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				},
+				{
+					"title": "0.0.15",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Added iPhone 11 Exposure Slider",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				},
+				{
+					"title": "0.0.14",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Updated for iOS 15. Enabled iPhone 13 Zoom Plater",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				}
+			],
+			"class": "DepictionStackView"
+		}
+    ],
+    "minVersion": "0.1",
+    "class": "DepictionTabView",
+    "headerImage": "https://michaelmelita1.github.io/depictions/com.michaelmelita1.11cam15/screenshots/Banner1.png",
+    "tintColor": "#0657bb"
+}

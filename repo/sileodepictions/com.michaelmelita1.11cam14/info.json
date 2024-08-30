@@ -1,0 +1,100 @@
+{
+    "tabs": [
+        {
+            "class": "DepictionStackView",
+            "views": [
+                {
+                    "class": "DepictionMarkdownView",
+                    "markdown": "11Cam14 adds the iPhone 11 Camera App to your iPhone",
+                    "useSpacing": true
+                },
+                {
+                    "class": "DepictionScreenshotsView",
+                    "screenshots": [
+                        {
+                            "accessibilityText": "Screenshot0",
+                            "url": "https://michaelmelita1.github.io/depictions/com.michaelmelita1.11cam14/screenshots/1.PNG"
+                        },
+                        {
+                            "accessibilityText": "Screenshot1",
+                            "url": "https://michaelmelita1.github.io/depictions/com.michaelmelita1.11cam14/screenshots/2.PNG"
+                        }
+                    ],
+                    "itemSize": "{160, 275.41333333333336}",
+                    "itemCornerRadius": 6
+                },
+                {
+                    "markdown": "Compatible with iPhone SE - X running iOS 14",
+                    "class": "DepictionMarkdownView",
+                    "title": "markdown-description",
+                    "useBoldText": true,
+                    "useBottomMargin": false
+                },
+                {
+                    "class": "DepictionSeparatorView"
+                },
+                {
+                    "text": "0.0.11",
+                    "class": "DepictionTableTextView",
+                    "title": "Version"
+                },
+                {
+                    "text": "11-08-2020",
+                    "class": "DepictionTableTextView",
+                    "title": "Last Updated"
+                },
+                {
+                    "text": "Free",
+                    "class": "DepictionTableTextView",
+                    "title": "Price"
+                },
+                {
+                    "spacing": 8,
+                    "class": "DepictionSpacerView"
+                },
+                {
+                    "text": "Michael Melita",
+                    "class": "DepictionTableTextView",
+                    "title": "Developer"
+                },
+                {
+                    "spacing": 8,
+                    "class": "DepictionSpacerView"
+                }
+            ],
+            "tabname": "Details"
+        },
+        {
+			"tabname": "Changelog",
+			"views": [
+				{
+					"title": "0.0.11",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Fixed Portrait Effects on iPhone 7 Plus. Added Auto Live Photo Feature and AutoHDR. Enabled Camera System Wide",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				},
+				{
+					"title": "0.0.9",
+					"useBoldText": true,
+					"useBottomMargin": true,
+					"class": "DepictionSubheaderView"
+				},
+				{
+					"markdown": "\t\n\u2022 Merged BetterCam and 11Cam for iOS 13",
+					"useSpacing": false,
+					"class": "DepictionMarkdownView"
+				}
+			],
+			"class": "DepictionStackView"
+		}
+    ],
+    "minVersion": "0.1",
+    "class": "DepictionTabView",
+    "headerImage": "https://michaelmelita1.github.io/depictions/com.michaelmelita1.11cam14/screenshots/Banner1.png",
+    "tintColor": "#0657bb"
+}

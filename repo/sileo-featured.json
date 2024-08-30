@@ -1,0 +1,19 @@
+{  
+   "class":"FeaturedBannersView",
+   "itemSize":"{263, 148}",
+   "itemCornerRadius":10,
+   "banners":[  
+      {  
+         "url":"https://michaelmelita1.github.io/depictions/com.michaelmelita1.11cam/screenshots/Featured.png",
+         "title":"11Cam15",
+         "package":"com.michaelmelita1.11cam15",
+         "hideShadow":false
+      },
+      {  
+         "url":"https://michaelmelita1.github.io/depictions/com.michaelmelita1.detectedtext/screenshots/Featured.png",
+         "title":"DetectedText",
+         "package":"com.michaelmelita1.detectedtext",
+         "hideShadow":false
+      },
+   ]
+}

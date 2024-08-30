@@ -1,0 +1,23 @@
+<package>
+	<id>com.michaelmelita1.detectedtext</id>
+	<name>DetectedText</name>
+	<version>0.0.2</version>
+	<compatibility>
+		<firmware>
+			<miniOS>15.0</miniOS>
+		</firmware>
+	</compatibility>
+	<shortDescription>Live Text in the camera app on iPadOS 15</shortDescription>
+	<descriptionlist>
+		<description>Enable Live Text on iPadOS 15</description>
+		<description>Compatible with iPad's on iPadOS 15</description>		
+	</descriptionlist>
+	<screenshots>
+		<screenshot>
+			<image>1.png</image>
+		</screenshot>	
+	</screenshots>
+	<changelog>
+		<change>Locked install to iPads</change>
+	</changelog>
+</package>

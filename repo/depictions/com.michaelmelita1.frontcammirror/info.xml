@@ -1,0 +1,18 @@
+<package>
+	<id>com.michaelmelita1.frontcammirror</id>
+	<name>FrontCamMirror</name>
+	<version>0.0.1</version>
+	<compatibility>
+		<firmware>
+			<miniOS>14.0</miniOS>
+		</firmware>
+	</compatibility>
+	<shortDescription>Mirror the Selfie Camera</shortDescription>
+	<descriptionlist>
+		<description>Mirror the Front Camera on iOS 14</description>
+		<description>Compatible with iPhone SE to iPhone X</description>
+	</descriptionlist>
+	<changelog>
+		<change>Initial Release</change>
+	</changelog>
+</package>
